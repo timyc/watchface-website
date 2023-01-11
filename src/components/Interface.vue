@@ -11,10 +11,3 @@
         <tspan x="0.3" y="1.55">14th</tspan>
     </text>
 </template>
-
-<style scoped>
-/* Can use SCSS later */
-text {
-    font-family: 'Inter', sans-serif;
-}
-</style>
