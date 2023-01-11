@@ -22,6 +22,14 @@ body {
     position: relative;
 }
 
+.d-block {
+    display: block;
+}
+
+.d-sb {
+    justify-content: space-between;
+}
+
 .h-100 {
     height: 100vh;
 }
@@ -44,4 +52,12 @@ body {
 .left {
     text-align: left;
 
+}
+
+.right {
+    text-align: right;
+}
+
+.white {
+    color: white;
 }
