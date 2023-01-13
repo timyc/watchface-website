@@ -61,7 +61,7 @@ export default {
             item-key="stat">
                 <template #item="{element}">
                     <div>
-                        <SelectedStatItem :name="nameMap[element.stat as keyof typeof nameMap]" />
+                        <SelectedStatItem :stat="element.stat" :name="nameMap[element.stat as keyof typeof nameMap]" />
                     </div>
                 </template>
             </draggable>
@@ -85,7 +85,7 @@ export default {
 #statisticsSelector {
     width: 80vw;
     padding: 10px;
-    background-color: #D9D9D9;
+    background-color: #3b984b;
     border-radius: 5px;
     margin: auto;
     cursor: pointer;

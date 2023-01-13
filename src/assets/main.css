@@ -76,6 +76,14 @@ body {
     color: white;
 }
 
+.red {
+    color: red;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
 .selected {
     border: 7px solid #FF0303;
     border-radius: 13px;

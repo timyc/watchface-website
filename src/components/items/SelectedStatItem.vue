@@ -7,6 +7,10 @@ export default {
             type: String,
             required: true,
         },
+        stat: {
+            type: String,
+            required: true,
+        },
     },
     data() {
         return {
@@ -19,12 +23,23 @@ export default {
             settingsStore,
         };
     },
+    methods: {
+        removeStat() {
+            this.settingsStore.fields = this.settingsStore.fields.filter(e => e.stat != this.stat);
+        }
+    }
 }
 </script>
 
 <template>
     <div class="selectedStat" @click="visible = !visible">{{ name }}</div>
-    <div class="statInfo" v-if="visible">stat info</div>
+    <div class="statInfo" v-if="visible">
+        <select>
+            <option>Display it like this</option>
+            <option>Display it like that</option>
+        </select>
+        <div class="red clickable" @click="removeStat()">[Remove]</div>
+    </div>
 </template>
 
 <style scoped>
