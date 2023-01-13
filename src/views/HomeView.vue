@@ -27,9 +27,12 @@ export default {
 
 <template>
   <!-- Fitbit image -->
-  <div class="h-50 w-100 d-abs d-flex">
-    <img src="@/assets/fitbit.png" draggable="false"
-      style="max-height: 100%; max-width: 100%; width: 100%; height: auto; object-fit: contain;" />
+  <div class="center h-50 d-abs d-flex" style="margin-left: auto; margin-right: auto; right: 0; left: 0">
+    <!--<img src="@/assets/fitbit.png" draggable="false"
+      style="max-height: 100%; max-width: 100%; width: 100%; height: auto; object-fit: contain;" />-->
+    <svg width="250" height="250">
+      <rect width="100%" height="100%" rx="50" ry="50" stroke="black" stroke-width="30" fill-opacity="0" />
+    </svg>
   </div>
   <!-- Whatever is inside the Fitbit should be added below -->
   <div class="center h-50 d-flex">
