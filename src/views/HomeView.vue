@@ -5,11 +5,14 @@ import IntroStep from '@/components/steps/IntroStep.vue';
 import CheckpointStep from '@/components/steps/CheckpointStep.vue';
 import LayoutStep from '@/components/steps/LayoutStep.vue';
 import StatisticsStep from '@/components/steps/StatisticsStep.vue';
+import ThemesStep from '@/components/steps/ThemesStep.vue';
+import AestheticStep from '@/components/steps/AestheticStep.vue';
+import ExportStep from '@/components/steps/ExportStep.vue';
 import { useSettingsStore } from '@/stores/settings';
 export default {
   name: 'HomeView',
   components: {
-    RetroPurple, Interface, IntroStep, CheckpointStep, LayoutStep, StatisticsStep,
+    RetroPurple, Interface, IntroStep, CheckpointStep, LayoutStep, StatisticsStep, ThemesStep, AestheticStep, ExportStep,
   },
   setup() {
     const settingsStore = useSettingsStore();
@@ -47,8 +50,10 @@ export default {
     <LayoutStep v-if="settingsStore.step == 3" />
     <StatisticsStep v-if="settingsStore.step == 4" />
     <CheckpointStep :num="2" text="Apply a theme" v-if="settingsStore.step == 5" />
-
+    <ThemesStep v-if="settingsStore.step == 6" />
     <CheckpointStep :num="3" text="Apply an aesthetic" v-if="settingsStore.step == 7" />
+    <AestheticStep v-if="settingsStore.step == 8" />
+    <ExportStep v-if="settingsStore.step == 9" />
   </div>
 </template>
 

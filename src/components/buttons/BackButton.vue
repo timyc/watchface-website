@@ -8,11 +8,19 @@ export default {
         settingsStore,
         };
     },
+    props: {
+        step: {
+            type: Number,
+            default() {
+                return 1;
+            }
+        },
+    },
 }
 </script>
 
 <template>
-    <div class="left backBtn" @click="settingsStore.step--">Back</div>
+    <div class="left backBtn" @click="settingsStore.step -= step">Back</div>
 </template>
 
 <style scoped>
