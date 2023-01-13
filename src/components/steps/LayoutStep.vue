@@ -86,12 +86,11 @@ export default {
                 </svg>
             </div>
         </div>
-        <footer class="d-flex d-sb">
-            <BackButton />
-            <ContinueButton v-if="settingsStore.layout != null" />
-        </footer>
-        
     </div>
+    <footer class="d-flex d-sb">
+        <BackButton />
+        <ContinueButton v-if="settingsStore.layout != null" />
+    </footer>
 </template>
 
 <style scoped>
@@ -101,5 +100,13 @@ export default {
     width: 90vw;
     overflow-x: scroll;
     overflow-y: hidden;
+}
+
+#layoutContainer > div:first-child {
+    margin-left: auto;
+}
+
+#layoutContainer > div:last-child {
+    margin-right: auto;
 }
 </style>

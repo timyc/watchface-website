@@ -55,11 +55,11 @@ export default {
             </div>
             <div class="selectedStat" v-for="item in settingsStore.fields">{{ nameMap[item.stat as keyof typeof nameMap] }}</div>
         </div>
-        <footer class="d-flex d-sb">
-            <BackButton />
-            <ContinueButton v-if="settingsStore.fields.length > 0" />
-        </footer>
     </div>
+    <footer class="d-flex d-sb">
+        <BackButton />
+        <ContinueButton v-if="settingsStore.fields.length > 0" />
+    </footer>
 </template>
 
 <style scoped>
