@@ -1,25 +1,19 @@
-<script lang="ts">
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
 import { useSettingsStore } from '@/stores/settings';
-export default {
-    name: 'ThemesStep',
-    setup() {
-        const settingsStore = useSettingsStore();
-        return {
-            settingsStore,
-        };
-    },
-}
+import themes from '@/data/themes';
+const settingsStore = useSettingsStore();
+const importer = (type: string, file: string) => defineAsyncComponent(() => import(`@/components/${type}/${file}.vue`));
 </script>
 
 <template>
     <div>
         <h2>Choose a theme</h2>
-        <!--<p>Themes would be displayed here...</p>
-        <div @click="settingsStore.theme = 'RetroPurple'">Click here to continue anyway</div>-->
         <div id="themesContainer">
-            <div>
-
-            </div>
+            <svg :class="{'selected': settingsStore.theme == theme.theme}" width="250" height="250" viewBox="100 50 50 180" v-for="theme in themes" @click="settingsStore.theme = theme.theme">
+                <component :is="importer('themes', theme.theme)" />
+            </svg>
+            
         </div>
     </div>
     <footer class="d-flex d-sb">
@@ -43,5 +37,8 @@ export default {
 
 #themesContainer > div:last-child {
     margin-right: auto;
+}
+.test {
+    border: 10px solid black;
 }
 </style>

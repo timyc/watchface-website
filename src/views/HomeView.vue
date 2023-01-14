@@ -2,23 +2,20 @@
 import { defineAsyncComponent } from 'vue';
 import { useSettingsStore } from '@/stores/settings';
 const settingsStore = useSettingsStore();
-const importTheme = (theme: string) => defineAsyncComponent(() => import(`@/components/themes/${theme}.vue`));
-const importLayout = (theme: string) => defineAsyncComponent(() => import(`@/components/layouts/${theme}.vue`));
+const importer = (type: string, file: string) => defineAsyncComponent(() => import(`@/components/${type}/${file}.vue`));
 </script>
 
 <template>
-  <!-- Fitbit image -->
+  <!-- Fitbit outer svg -->
   <div class="center h-50 d-abs d-flex" style="margin-left: auto; margin-right: auto; right: 0; left: 0">
-    <!--<img src="@/assets/fitbit.png" draggable="false"
-      style="max-height: 100%; max-width: 100%; width: 100%; height: auto; object-fit: contain;" />-->
     <svg width="250" height="250">
       <rect width="100%" height="100%" rx="50" ry="50" stroke="black" stroke-width="30" fill-opacity="0" />
     </svg>
   </div>
   <!-- Whatever is inside the Fitbit should be added below -->
   <div class="center h-50 d-flex">
-    <component :is="settingsStore.theme == null ? importTheme('NoTheme') : importTheme(settingsStore.theme)">
-      <component :is="settingsStore.layout == null ? importLayout('NoLayout') : importLayout(`${settingsStore.layout}Layout`)" />
+    <component :is="settingsStore.theme == null ? importer('themes', 'NoTheme') : importer('themes', settingsStore.theme)">
+      <component :is="settingsStore.layout == null ? importer('layouts', 'NoLayout') : importer('layouts', `${settingsStore.layout}Layout`)" />
     </component>
   </div>
   <!-- Last row for option choosing -->
