@@ -1,6 +1,12 @@
 <script lang="ts">
 import RetroPurple from '@/components/themes/RetroPurple.vue';
-import Interface from '@/components/Interface.vue';
+import NoTheme from '@/components/themes/NoTheme.vue';
+import NoLayout from '@/components/layouts/NoLayout.vue';
+import TopLayout from '@/components/layouts/TopLayout.vue';
+import BottomLayout from '@/components/layouts/BottomLayout.vue';
+import CornerLayout from '@/components/layouts/CornerLayout.vue';
+import RightListLayout from '@/components/layouts/RightListLayout.vue';
+import LeftListLayout from '@/components/layouts/LeftListLayout.vue';
 import IntroStep from '@/components/steps/IntroStep.vue';
 import CheckpointStep from '@/components/steps/CheckpointStep.vue';
 import LayoutStep from '@/components/steps/LayoutStep.vue';
@@ -12,7 +18,7 @@ import { useSettingsStore } from '@/stores/settings';
 export default {
   name: 'HomeView',
   components: {
-    RetroPurple, Interface, IntroStep, CheckpointStep, LayoutStep, StatisticsStep, ThemesStep, AestheticStep, ExportStep,
+    RetroPurple, NoLayout, IntroStep, CheckpointStep, LayoutStep, StatisticsStep, ThemesStep, AestheticStep, ExportStep, NoTheme, TopLayout, BottomLayout, CornerLayout, RightListLayout, LeftListLayout,
   },
   setup() {
     const settingsStore = useSettingsStore();
@@ -39,9 +45,9 @@ export default {
   </div>
   <!-- Whatever is inside the Fitbit should be added below -->
   <div class="center h-50 d-flex">
-    <RetroPurple>
-      <Interface />
-    </RetroPurple>
+    <component :is="settingsStore.theme == null ? 'NoTheme' : settingsStore.theme">
+      <component :is="settingsStore.layout == null ? 'NoLayout' : `${settingsStore.layout}Layout`" />
+    </component>
   </div>
   <!-- Last row for option choosing -->
   <div class="center d-flex">

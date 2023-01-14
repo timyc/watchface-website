@@ -3,6 +3,7 @@ import { useSettingsStore } from '@/stores/settings';
 import BackButton from '@/components/buttons/BackButton.vue';
 import ContinueButton from '@/components/buttons/ContinueButton.vue';
 import SelectedStatItem from '../items/SelectedStatItem.vue';
+import statistics from '@/data/statistics';
 import draggable from 'vuedraggable';
 
 export default {
@@ -13,7 +14,7 @@ export default {
     setup() {
         const settingsStore = useSettingsStore();
         return {
-            settingsStore,
+            settingsStore, statistics,
         };
     },
     methods: {
@@ -21,21 +22,6 @@ export default {
             this.settingsStore.fields.push({stat: stat, mode: 1});
         }
     },
-    data() {
-        return {
-            nameMap: {
-                "sleep": "Sleep",
-                "heart_rate": "Heart Rate",
-                "steps": "Steps",
-                "calories": "Calories",
-                "active_zone": "Active Zone Minutes",
-                "weather": "Weather",
-                "distance": "Distance Travelled",
-                "floor_count": "Floor Count"
-            },
-            drag: false,
-        }
-    }
 }
 </script>
 
@@ -46,14 +32,9 @@ export default {
             <div id="statisticsBox" v-if="settingsStore.fields.length < 4">
                 <div id="statisticsSelector">Add statistic</div>
                 <div id="statisticsChoices">
-                    <div v-if="!settingsStore.fields.find(e => e.stat == 'sleep')" @click="addStatistic('sleep')">Sleep</div>
-                    <div v-if="!settingsStore.fields.find(e => e.stat == 'heart_rate')" @click="addStatistic('heart_rate')">Heart Rate</div>
-                    <div v-if="!settingsStore.fields.find(e => e.stat == 'steps')" @click="addStatistic('steps')">Steps</div>
-                    <div v-if="!settingsStore.fields.find(e => e.stat == 'calories')" @click="addStatistic('calories')">Calories</div>
-                    <div v-if="!settingsStore.fields.find(e => e.stat == 'active_zone')" @click="addStatistic('active_zone')">Active Zone Minutes</div>
-                    <div v-if="!settingsStore.fields.find(e => e.stat == 'weather')" @click="addStatistic('weather')">Weather</div>
-                    <div v-if="!settingsStore.fields.find(e => e.stat == 'distance')" @click="addStatistic('distance')">Distance Travelled</div>
-                    <div v-if="!settingsStore.fields.find(e => e.stat == 'floor_count')" @click="addStatistic('floor_count')">Floor Count</div>
+                    <template v-for="value,index in statistics" :key="value.name">
+                        <div v-if="!settingsStore.fields.find(e => e.stat == index)" @click="addStatistic(index)">{{ value.name }}</div>
+                    </template>
                 </div>
             </div>
             <draggable 
@@ -61,7 +42,7 @@ export default {
             item-key="stat">
                 <template #item="{element}">
                     <div>
-                        <SelectedStatItem :stat="element.stat" :name="nameMap[element.stat as keyof typeof nameMap]" />
+                        <SelectedStatItem :stat="element.stat" :name="statistics[element.stat as keyof typeof statistics].name" />
                     </div>
                 </template>
             </draggable>
