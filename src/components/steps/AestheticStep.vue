@@ -15,7 +15,10 @@ export default {
 <template>
     <div>
         <h2>Apply an aesthetic</h2>
-        <div :class="{'aestheticChoice': true, 'selectedChoice': key == settingsStore.aesthetic}" v-for="aesthetic,key in aesthetics" @click="settingsStore.aesthetic = key" :style="{'font-family': aesthetic.layout[0]}">{{ aesthetic.name }}</div>
+        <div :class="{'aestheticChoice': true, 'selectedChoice': key == settingsStore.aesthetic}" v-for="aesthetic,key in aesthetics" @click="settingsStore.aesthetic = key" :style="{'font-family': aesthetic.layout[0]}">
+            {{ aesthetic.name }}
+            <span class="colorPreview" v-for="color in aesthetic.theme" :style="{'background-color': color}"></span>
+        </div>
     </div>
     <footer class="d-flex d-sb">
         <BackButton :step="2" />
@@ -35,5 +38,12 @@ export default {
 
 .selectedChoice {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.colorPreview {
+    display: inline-block;
+    width: 20px;
+    border: 1px solid black;
+    height: 20px;
+    margin: 0 5px;
 }
 </style>
