@@ -21,12 +21,12 @@ export default {
     },
     "distance": {
         name: "Distance",
-        icon: "walk",
+        icon: "footprint",
         display_methods: ["Average", "Total", "Minimum", "Maximum"],
     },
     "active_zone": {
         name: "Active Zone",
-        icon: "walk",
+        icon: "floor",
         display_methods: ["Average", "Total", "Minimum", "Maximum"],
     },
     "weather": {
@@ -36,7 +36,7 @@ export default {
     },
     "floor_count": {
         name: "Floor Count",
-        icon: "walk",
+        icon: "footprint",
         display_methods: ["Average", "Total", "Minimum", "Maximum"],
     },
 }
