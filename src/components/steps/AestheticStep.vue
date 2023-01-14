@@ -1,12 +1,7 @@
 <script lang="ts">
 import { useSettingsStore } from '@/stores/settings';
-import BackButton from '../buttons/BackButton.vue';
-import ContinueButton from '../buttons/ContinueButton.vue';
 export default {
     name: 'AestheticStep',
-    components: {
-        BackButton, ContinueButton,
-    },
     setup() {
         const settingsStore = useSettingsStore();
         return {

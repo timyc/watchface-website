@@ -1,12 +1,8 @@
 <script lang="ts">
-import StatisticItem from '../items/StatisticItem.vue';
 import { useSettingsStore } from '@/stores/settings';
 import statistics from '@/data/statistics';
 export default {
     name: 'CornerLayout',
-    components: {
-        StatisticItem,
-    },
     setup() {
         const settingsStore = useSettingsStore();
         return {

@@ -1,15 +1,12 @@
 <script lang="ts">
 import { useSettingsStore } from '@/stores/settings';
-import BackButton from '@/components/buttons/BackButton.vue';
-import ContinueButton from '@/components/buttons/ContinueButton.vue';
-import SelectedStatItem from '../items/SelectedStatItem.vue';
 import statistics from '@/data/statistics';
 import draggable from 'vuedraggable';
 
 export default {
     name: "StatisticsStep",
     components: {
-        BackButton, ContinueButton, SelectedStatItem, draggable,
+        draggable,
     },
     setup() {
         const settingsStore = useSettingsStore();

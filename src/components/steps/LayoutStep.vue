@@ -1,12 +1,7 @@
 <script lang="ts">
 import { useSettingsStore } from '@/stores/settings';
-import BackButton from '@/components/buttons/BackButton.vue';
-import ContinueButton from '@/components/buttons/ContinueButton.vue';
 export default {
     name: 'LayoutStep',
-    components: {
-        BackButton, ContinueButton,
-    },
     setup() {
         const settingsStore = useSettingsStore();
         return {

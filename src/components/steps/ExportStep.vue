@@ -1,10 +1,6 @@
 <script lang="ts">
-import BackButton from '../buttons/BackButton.vue';
 export default {
     name: 'ExportStep',
-    components: {
-        BackButton,
-    },
 }
 </script>
 

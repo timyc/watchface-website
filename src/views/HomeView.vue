@@ -1,37 +1,9 @@
-<script lang="ts">
-import RetroPurple from '@/components/themes/RetroPurple.vue';
-import NoTheme from '@/components/themes/NoTheme.vue';
-import NoLayout from '@/components/layouts/NoLayout.vue';
-import TopLayout from '@/components/layouts/TopLayout.vue';
-import BottomLayout from '@/components/layouts/BottomLayout.vue';
-import CornerLayout from '@/components/layouts/CornerLayout.vue';
-import RightListLayout from '@/components/layouts/RightListLayout.vue';
-import LeftListLayout from '@/components/layouts/LeftListLayout.vue';
-import IntroStep from '@/components/steps/IntroStep.vue';
-import CheckpointStep from '@/components/steps/CheckpointStep.vue';
-import LayoutStep from '@/components/steps/LayoutStep.vue';
-import StatisticsStep from '@/components/steps/StatisticsStep.vue';
-import ThemesStep from '@/components/steps/ThemesStep.vue';
-import AestheticStep from '@/components/steps/AestheticStep.vue';
-import ExportStep from '@/components/steps/ExportStep.vue';
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
 import { useSettingsStore } from '@/stores/settings';
-export default {
-  name: 'HomeView',
-  components: {
-    RetroPurple, NoLayout, IntroStep, CheckpointStep, LayoutStep, StatisticsStep, ThemesStep, AestheticStep, ExportStep, NoTheme, TopLayout, BottomLayout, CornerLayout, RightListLayout, LeftListLayout,
-  },
-  setup() {
-    const settingsStore = useSettingsStore();
-    return {
-      settingsStore,
-    };
-  },
-  data() {
-    return {
-      step: 1,
-    }
-  }
-}
+const settingsStore = useSettingsStore();
+const importTheme = (theme: string) => defineAsyncComponent(() => import(`/src/components/themes/${theme}.vue`));
+const importLayout = (theme: string) => defineAsyncComponent(() => import(`/src/components/layouts/${theme}.vue`));
 </script>
 
 <template>
@@ -45,8 +17,8 @@ export default {
   </div>
   <!-- Whatever is inside the Fitbit should be added below -->
   <div class="center h-50 d-flex">
-    <component :is="settingsStore.theme == null ? 'NoTheme' : settingsStore.theme">
-      <component :is="settingsStore.layout == null ? 'NoLayout' : `${settingsStore.layout}Layout`" />
+    <component :is="settingsStore.theme == null ? importTheme('NoTheme') : importTheme(settingsStore.theme)">
+      <component :is="settingsStore.layout == null ? importLayout('NoLayout') : importLayout(`${settingsStore.layout}Layout`)" />
     </component>
   </div>
   <!-- Last row for option choosing -->
