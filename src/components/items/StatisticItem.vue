@@ -32,5 +32,5 @@ export default {
 
 <template>
     <circle :cx="x1" :cy="y1" r="0.1" fill="red" />
-    <text :x="x2" :y="y2" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="0.15px">{{ name }}</text>
+    <text :x="x2" :y="y2" dominant-baseline="middle" :text-anchor="parseInt(x1) > 80 ? 'end' : 'start'" fill="white" font-size="0.15px">{{ name }}</text>
 </template>
