@@ -2,8 +2,8 @@
 import { defineAsyncComponent } from 'vue';
 import { useSettingsStore } from '@/stores/settings';
 const settingsStore = useSettingsStore();
-const importTheme = (theme: string) => defineAsyncComponent(() => import(`/src/components/themes/${theme}.vue`));
-const importLayout = (theme: string) => defineAsyncComponent(() => import(`/src/components/layouts/${theme}.vue`));
+const importTheme = (theme: string) => defineAsyncComponent(() => import(`@/components/themes/${theme}.vue`));
+const importLayout = (theme: string) => defineAsyncComponent(() => import(`@/components/layouts/${theme}.vue`));
 </script>
 
 <template>
