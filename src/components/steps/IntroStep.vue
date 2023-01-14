@@ -8,12 +8,17 @@ export default {
             settingsStore,
         };
     },
+    data() {
+        return {
+            appName: import.meta.env.VITE_APP_NAME,
+        }
+    }
 }
 </script>
 
 <template>
     <div>
-        <h1>Welcome to SmartBuild!</h1>
+        <h1>Welcome to {{ appName }}!</h1>
         <div class="step left"><span class="stepNum center">1</span> Customize your data</div>
         <div class="step left"><span class="stepNum center">2</span> Apply your theme</div>
         <div class="step left"><span class="stepNum center">3</span> Customize your aesthetic</div>

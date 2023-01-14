@@ -10,10 +10,11 @@ const importer = (type: string, file: string) => defineAsyncComponent(() => impo
     <div>
         <h2>Choose a theme</h2>
         <div id="themesContainer">
-            <svg :class="{'selected': settingsStore.theme == theme.theme}" width="250" height="250" viewBox="100 50 50 180" v-for="theme in themes" @click="settingsStore.theme = theme.theme">
-                <component :is="importer('themes', theme.theme)" />
-            </svg>
-            
+            <div :class="{ 'selected': settingsStore.theme == theme.theme }" v-for="theme in themes">
+                <svg width="250" height="250" viewBox="100 50 50 180" @click="settingsStore.theme = theme.theme">
+                    <component :is="importer('themes', theme.theme)" />
+                </svg>
+            </div>
         </div>
     </div>
     <footer class="d-flex d-sb">
@@ -31,13 +32,14 @@ const importer = (type: string, file: string) => defineAsyncComponent(() => impo
     overflow-y: hidden;
 }
 
-#themesContainer > div:first-child {
+#themesContainer>div:first-child {
     margin-left: auto;
 }
 
-#themesContainer > div:last-child {
+#themesContainer>div:last-child {
     margin-right: auto;
 }
+
 .test {
     border: 10px solid black;
 }
