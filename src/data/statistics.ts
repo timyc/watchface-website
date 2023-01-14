@@ -11,7 +11,7 @@ export default {
     },
     "steps": {
         name: "Steps",
-        icon: "walk",
+        icon: "footprint",
         display_methods: ["Average", "Total", "Minimum", "Maximum"],
     },
     "calories": {
