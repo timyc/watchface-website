@@ -8,4 +8,14 @@ export const useSettingsStore = defineStore("settingsStore", {
         fields: [] as any[],
         step: 1,
     }),
+    actions: {
+        getExport() {
+            return JSON.stringify({
+                layout: this.layout,
+                theme: this.theme,
+                aesthetic: this.aesthetic,
+                fields: this.fields,
+            });
+        }
+    },
 });
