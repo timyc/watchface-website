@@ -3,8 +3,8 @@ import { useSettingsStore } from '@/stores/settings';
 export default {
     name: 'SelectedStatItem',
     props: {
-        name: {
-            type: String,
+        statInfo: {
+            type: Object as any,
             required: true,
         },
         stat: {
@@ -32,11 +32,10 @@ export default {
 </script>
 
 <template>
-    <div class="selectedStat" @click="visible = !visible">{{ name }}</div>
+    <div class="selectedStat" @click="visible = !visible">{{ statInfo.name }}</div>
     <div class="statInfo" v-if="visible">
         <select>
-            <option>Display it like this</option>
-            <option>Display it like that</option>
+            <option v-for="method of statInfo.display_methods">{{ method.name }}</option>
         </select>
         <div class="red clickable" @click="removeStat()">[Remove]</div>
     </div>

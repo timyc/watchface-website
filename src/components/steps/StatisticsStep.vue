@@ -39,7 +39,7 @@ export default {
             item-key="stat">
                 <template #item="{element}">
                     <div>
-                        <SelectedStatItem :stat="element.stat" :name="statistics[element.stat as keyof typeof statistics].name" />
+                        <SelectedStatItem :stat="element.stat" :statInfo="statistics[element.stat as keyof typeof statistics]" />
                     </div>
                 </template>
             </draggable>
