@@ -15,8 +15,8 @@ export default {
         };
     },
     methods: {
-        addStatistic(stat: string) {
-            this.settingsStore.fields.push({stat: stat, mode: 1});
+        addStatistic(stat: string, mode: string) {
+            this.settingsStore.fields.push({stat: stat, mode: mode});
         }
     },
 }
@@ -30,7 +30,7 @@ export default {
                 <div id="statisticsSelector">Add statistic</div>
                 <div id="statisticsChoices">
                     <template v-for="value,index in statistics" :key="value.name">
-                        <div v-if="!settingsStore.fields.find(e => e.stat == index)" @click="addStatistic(index)">{{ value.name }}</div>
+                        <div v-if="!settingsStore.fields.find(e => e.stat == index)" @click="addStatistic(index, Object.keys(value.display_methods)[0])">{{ value.name }}</div>
                     </template>
                 </div>
             </div>

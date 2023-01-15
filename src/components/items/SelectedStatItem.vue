@@ -34,8 +34,8 @@ export default {
 <template>
     <div class="selectedStat" @click="visible = !visible">{{ statInfo.name }}</div>
     <div class="statInfo" v-if="visible">
-        <select>
-            <option v-for="method of statInfo.display_methods">{{ method.name }}</option>
+        <select v-model="settingsStore.fields.filter(e => e.stat == stat)[0].mode">
+            <option v-for="method,key of statInfo.display_methods" :value="key">{{ method.name }}</option>
         </select>
         <div class="red clickable" @click="removeStat()">[Remove]</div>
     </div>
