@@ -1,11 +1,12 @@
 <script lang="ts">
 import { useSettingsStore } from '@/stores/settings';
+import layouts from '@/data/layouts';
 export default {
     name: 'LayoutStep',
     setup() {
         const settingsStore = useSettingsStore();
         return {
-            settingsStore,
+            settingsStore, layouts
         };
     },
 }
@@ -15,69 +16,13 @@ export default {
     <div>
         <h2>Choose a layout option</h2>
         <div id="layoutContainer">
-            <div :class="{'selected': settingsStore.layout == 'Top'}" @click="settingsStore.layout = 'Top'">
-                <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="0" width="100" height="100" fill="#F0F0F0" />
-                    <circle cx="10%" cy="10%" r="3" fill="red" />
-                    <text x="25%" y="10%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="10%" cy="20%" r="3" fill="red" />
-                    <text x="25%" y="20%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="65%" cy="10%" r="3" fill="red" />
-                    <text x="80%" y="10%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="65%" cy="20%" r="3" fill="red" />
-                    <text x="80%" y="20%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                </svg>
-            </div>
-            <div :class="{'selected': settingsStore.layout == 'Bottom'}" @click="settingsStore.layout = 'Bottom'">
-                <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="0" width="100" height="100" fill="#F0F0F0" />
-                    <circle cx="10%" cy="90%" r="3" fill="red" />
-                    <text x="25%" y="90%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="10%" cy="80%" r="3" fill="red" />
-                    <text x="25%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="65%" cy="90%" r="3" fill="red" />
-                    <text x="80%" y="90%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="65%" cy="80%" r="3" fill="red" />
-                    <text x="80%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                </svg>
-            </div>
-            <div :class="{'selected': settingsStore.layout == 'Corner'}" @click="settingsStore.layout = 'Corner'">
-                <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="0" width="100" height="100" fill="#F0F0F0" />
-                    <circle cx="10%" cy="10%" r="3" fill="red" />
-                    <text x="25%" y="10%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="10%" cy="90%" r="3" fill="red" />
-                    <text x="25%" y="90%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="90%" cy="10%" r="3" fill="red" />
-                    <text x="75%" y="10%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="90%" cy="90%" r="3" fill="red" />
-                    <text x="75%" y="90%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                </svg>
-            </div>
-            <div :class="{'selected': settingsStore.layout == 'RightList'}" @click="settingsStore.layout = 'RightList'">
-                <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="0" width="100" height="100" fill="#F0F0F0" />
-                    <circle cx="90%" cy="90%" r="3" fill="red" />
-                    <text x="75%" y="90%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="90%" cy="80%" r="3" fill="red" />
-                    <text x="75%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="90%" cy="70%" r="3" fill="red" />
-                    <text x="75%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="90%" cy="60%" r="3" fill="red" />
-                    <text x="75%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                </svg>
-            </div>
-            <div :class="{'selected': settingsStore.layout == 'LeftList'}" @click="settingsStore.layout = 'LeftList'">
-                <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="0" width="100" height="100" fill="#F0F0F0" />
-                    <circle cx="10%" cy="90%" r="3" fill="red" />
-                    <text x="25%" y="90%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="10%" cy="80%" r="3" fill="red" />
-                    <text x="25%" y="80%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="10%" cy="70%" r="3" fill="red" />
-                    <text x="25%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
-                    <circle cx="10%" cy="60%" r="3" fill="red" />
-                    <text x="25%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="gray" font-size="5px">Statistic</text>
+            <div v-for="layout,key in layouts" :key="key" :class="{'selected': settingsStore.layout == key}" @click="settingsStore.layout = key">
+                <svg width="200" height="200" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" y="0" width="100" height="100" fill="gray" />
+                    <StatisticItem :stat="null" :coords="layouts[key].stats[0]" />
+                    <StatisticItem :stat="null" :coords="layouts[key].stats[2]" />
+                    <StatisticItem :stat="null" :coords="layouts[key].stats[1]" />
+                    <StatisticItem :stat="null" :coords="layouts[key].stats[3]" />
                 </svg>
             </div>
         </div>

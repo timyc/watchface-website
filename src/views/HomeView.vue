@@ -2,6 +2,7 @@
 import { defineAsyncComponent } from 'vue';
 import { useSettingsStore } from '@/stores/settings';
 import aesthetics from '@/data/aesthetics';
+import layouts from '@/data/layouts';
 const settingsStore = useSettingsStore();
 const importer = (type: string, file: string) => defineAsyncComponent(() => import(`@/components/${type}/${file}.vue`));
 </script>
@@ -16,7 +17,7 @@ const importer = (type: string, file: string) => defineAsyncComponent(() => impo
   <!-- Whatever is inside the Fitbit should be added below -->
   <div class="center h-50 d-flex" :style="{'font-family': settingsStore.aesthetic == null ? 'inherit' : `${aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].layout[0]}`}">
     <component :is="settingsStore.theme == null ? importer('themes', 'NoTheme') : importer('themes', settingsStore.theme)">
-      <component :is="settingsStore.layout == null ? importer('layouts', 'NoLayout') : importer('layouts', `${settingsStore.layout}Layout`)" />
+      <component :is="settingsStore.layout == null ? importer('layouts', 'NoLayout') : importer('layouts', `${layouts[settingsStore.layout as keyof typeof layouts].type}Layout`)" />
     </component>
   </div>
   <!-- Last row for option choosing -->

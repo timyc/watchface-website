@@ -3,6 +3,12 @@ import { hexToCSSFilter } from 'hex-to-css-filter';
 import aesthetics from '@/data/aesthetics';
 import statistics from '@/data/statistics';
 import { useSettingsStore } from '@/stores/settings';
+interface Coords {
+    x1: string;
+    y1: string;
+    x2: string;
+    y2: string;
+}
 export default {
     name: 'StatisticItem',
     props: {
@@ -11,20 +17,8 @@ export default {
             default: null,
             required: false,
         },
-        x1: {
-            type: String,
-            required: true,
-        },
-        x2: {
-            type: String,
-            required: true,
-        },
-        y1: {
-            type: String,
-            required: true,
-        },
-        y2: {
-            type: String,
+        coords: {
+            type: Object as () => Coords,
             required: true,
         },
     },
@@ -43,10 +37,10 @@ export default {
 </script>
 
 <template>
-    <svg width="0.4" height="0.4" :x="x1" :y="y1" viewBox="0 0 22 12" >
+    <svg width="0.4" height="0.4" :x="coords.x1" :y="coords.y1" viewBox="0 0 22 12" >
         <image width="100%" height="100%" :href="'/icons/' + (stat == null ? 'question' : statistics[stat.stat as keyof typeof statistics].icon) + '.svg'" :style="{'filter': hexToCSSFilter(settingsStore.aesthetic == null ? '#FFFFFF' : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]).filter.slice(0, -1)}" />
     </svg>
-    <text :x="x2" :y="y2" dominant-baseline="middle" :text-anchor="parseInt(x1) > 80 ? 'end' : 'start'" :fill="settingsStore.aesthetic == null ? '#FFFFFF' : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]" font-size="0.15px">
+    <text :x="coords.x2" :y="coords.y2" dominant-baseline="middle" :text-anchor="parseInt(coords.x1) > 80 ? 'end' : 'start'" :fill="settingsStore.aesthetic == null ? '#FFFFFF' : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]" font-size="0.15px">
     {{ //@ts-ignore 
         stat == null ? 'Statistic' : statistics[stat.stat as keyof typeof statistics].display_methods[stat.mode].text }}
     </text>

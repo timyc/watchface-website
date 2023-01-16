@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SelectedStatItem: typeof import('./src/components/items/SelectedStatItem.vue')['default']
+    StandardLayout: typeof import('./src/components/layouts/StandardLayout.vue')['default']
     StatisticItem: typeof import('./src/components/items/StatisticItem.vue')['default']
     StatisticsStep: typeof import('./src/components/steps/StatisticsStep.vue')['default']
     ThemesStep: typeof import('./src/components/steps/ThemesStep.vue')['default']
