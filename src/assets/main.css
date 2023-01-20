@@ -17,11 +17,6 @@
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    height: 100vh;
-}
-
-#app {
-    height: 100vh;
 }
 
 .d-flex {
@@ -44,6 +39,14 @@ body {
     justify-content: space-between;
 }
 
+.d-table {
+    display: table;
+}
+
+.d-cell {
+    display: table-cell;
+}
+
 .h-100 {
     height: 100vh;
 }
@@ -54,6 +57,10 @@ body {
 
 .w-100 {
     width: 100vw;
+}
+
+.w-100p {
+    width: 100%;
 }
 
 .center {
