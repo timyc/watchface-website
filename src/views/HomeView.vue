@@ -3,6 +3,7 @@ import { defineAsyncComponent, ref } from 'vue';
 import { useSettingsStore } from '@/stores/settings';
 import aesthetics from '@/data/aesthetics';
 import layouts from '@/data/layouts';
+import themes from '@/data/themes';
 const settingsStore = useSettingsStore();
 const importer = (type: string, file: string) => defineAsyncComponent(() => import(`@/components/${type}/${file}.vue`));
 const menuOpen = ref(false);
@@ -24,7 +25,7 @@ const menuOpen = ref(false);
     <div class="center h-50 d-flex"
       :style="{ 'font-family': settingsStore.aesthetic == null ? 'inherit' : `${aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].layout[0]}` }">
       <component
-        :is="settingsStore.theme == null ? importer('themes', 'NoTheme') : importer('themes', settingsStore.theme)">
+        :is="settingsStore.theme == null ? importer('themes', 'NoTheme') : importer('themes', themes[settingsStore.theme as keyof typeof themes].theme)">
         <component
           :is="settingsStore.layout == null ? importer('layouts', 'NoLayout') : importer('layouts', `${layouts[settingsStore.layout as keyof typeof layouts].type}Layout`)" />
       </component>
@@ -32,7 +33,7 @@ const menuOpen = ref(false);
   </div>
 
   <!-- Last row for option choosing -->
-  <div :class="{'blur': menuOpen}" class="center d-flex">
+  <div :class="{'blur': menuOpen}" class="center d-flex" style="flex-direction:column">
     <IntroStep v-if="settingsStore.step == 1" />
     <CheckpointStep :num="1" text="Customize your data" v-if="settingsStore.step == 2" />
     <LayoutStep v-if="settingsStore.step == 3" />

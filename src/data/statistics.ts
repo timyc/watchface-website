@@ -31,6 +31,20 @@ export default {
             },
         },
     },
+    "spo2": {
+        name: "SpO2",
+        icon: "heart",
+        display_methods: {
+            "today": {
+                name: "Today",
+                text: "95%"
+            },
+            "percent": {
+                name: "Goal",
+                text: "33%"
+            },
+        },
+    },
     "steps": {
         name: "Steps",
         icon: "footprint",
