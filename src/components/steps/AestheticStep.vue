@@ -5,6 +5,7 @@ export default {
     name: 'AestheticStep',
     setup() {
         const settingsStore = useSettingsStore();
+        settingsStore.aestheticFlag = true;
         return {
             settingsStore, aesthetics,
         };
@@ -18,12 +19,14 @@ export default {
         <div :class="{'aestheticChoice': true, 'selectedChoice': key == settingsStore.aesthetic, 'd-table': true}" v-for="aesthetic,key in aesthetics" @click="settingsStore.aesthetic = key" :style="{'font-family': aesthetic.layout[0]}">
             <span class="d-cell left" style="margin-right:auto;vertical-align:middle">{{ aesthetic.name }}</span>
             <span class="d-cell right" style="margin-left:auto"><span class="colorPreview" v-for="color in aesthetic.theme" :style="{'background-color': color}"></span></span>
-            
+        </div>
+        <div :class="{'aestheticChoice': true, 'selectedChoice': settingsStore.aesthetic == null, 'd-table': true}" @click="settingsStore.aesthetic = null">
+            <span class="d-cell left" style="margin-right:auto;vertical-align:middle">Default</span>
         </div>
     </div>
     <footer class="d-flex d-sb">
         <BackButton :step="2" />
-        <ContinueButton v-if="settingsStore.aesthetic != null" />
+        <ContinueButton />
     </footer>
 </template>
 

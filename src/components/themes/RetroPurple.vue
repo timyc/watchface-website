@@ -2,6 +2,7 @@
 import { useSettingsStore } from '@/stores/settings';
 import aesthetics from '@/data/aesthetics';
 const settingsStore = useSettingsStore();
+const defaults = ["darkviolet", "black","#FFFFFF"];
 </script>
 
 <template>

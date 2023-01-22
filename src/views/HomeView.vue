@@ -61,7 +61,7 @@ const menuOpen = ref(false);
       </div>
       <div class="d-table w-100p">
         <div class="menuOption clickable" @click="settingsStore.step = 8;menuOpen = false">Aesthetic</div>
-        <div class="d-cell right" v-if="settingsStore.aesthetic != null"><img src="/icons/checkmark.png" width="20" /></div>
+        <div class="d-cell right" v-if="settingsStore.aestheticFlag == true"><img src="/icons/checkmark.png" width="20" /></div>
       </div>
     </div>
   </div>
