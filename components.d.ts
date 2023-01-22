@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AestheticStep: typeof import('./src/components/steps/AestheticStep.vue')['default']
+    Amogus: typeof import('./src/components/themes/Amogus.vue')['default']
     BackButton: typeof import('./src/components/buttons/BackButton.vue')['default']
     BottomLayout: typeof import('./src/components/layouts/BottomLayout.vue')['default']
     CheckpointStep: typeof import('./src/components/steps/CheckpointStep.vue')['default']
