@@ -100,3 +100,14 @@ footer {
     bottom: 10px;
     width: 90vw;
 }
+
+.notice {
+    background-color: aquamarine;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.v-middle {
+    vertical-align: middle;
+}

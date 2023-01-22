@@ -49,10 +49,4 @@ const importer = (type: string, file: string) => defineAsyncComponent(() => impo
 #themesContainer>div:last-child {
     margin-right: auto;
 }
-.notice {
-    background-color: aquamarine;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-}
 </style>

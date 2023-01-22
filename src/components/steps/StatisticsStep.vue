@@ -36,7 +36,8 @@ export default {
             </div>
             <draggable 
             v-model="settingsStore.fields" 
-            item-key="stat">
+            item-key="stat"
+            handle=".handle">
                 <template #item="{element}">
                     <div>
                         <SelectedStatItem :stat="element.stat" :statInfo="statistics[element.stat as keyof typeof statistics]" />
