@@ -12,7 +12,7 @@ export default {
     "amogus": {
         theme: "Amogus",
         name: "Among Us",
-        extra: []
+        extra: ['AmongUsCustom']
     },
     "custom": {
         theme: "CustomImage",

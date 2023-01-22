@@ -16,8 +16,8 @@ const settingsStore = useSettingsStore();
         <rect width="100%" height="100%" rx="1" fill="url('#amongusgrad')" />
         <ellipse cx="1.5" cy="1" rx="1" ry="0.5" fill="skyblue" stroke-width="5%" stroke="black" />
         <ellipse cx="1.7" cy="0.8" rx="0.3" ry="0.15" fill="lightcyan" />
-        <rect width="5%" height="20%" x="2.7" y="0.3" fill="beige" stroke-width="1%" stroke="black" transform="rotate(45)" />
-        <rect width="5%" height="25%" x="-0.6" y="2.4" fill="beige" stroke-width="1%" stroke="black" transform="rotate(-45)" />
+        <rect width="5%" height="20%" x="2.7" y="0.3" fill="beige" stroke-width="1%" stroke="black" transform="rotate(45)" v-if="settingsStore.bandaid" />
+        <rect width="5%" height="25%" x="-0.6" y="2.4" fill="beige" stroke-width="1%" stroke="black" transform="rotate(-45)" v-if="settingsStore.bandaid" />
         <slot></slot>
     </svg>
 </template>

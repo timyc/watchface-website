@@ -7,6 +7,7 @@ export const useSettingsStore = defineStore("settingsStore", {
         aesthetic: null as unknown as string,
         customImage: null as unknown as string,
         placeholderImage: null as unknown as string,
+        bandaid: true,
         errorText: '',
         fields: [] as any[],
         step: 1,
