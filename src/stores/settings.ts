@@ -6,8 +6,11 @@ export const useSettingsStore = defineStore("settingsStore", {
         theme: null as unknown as string,
         aesthetic: null as unknown as string,
         customImage: null as unknown as string,
+        placeholderImage: null as unknown as string,
+        errorText: '',
         fields: [] as any[],
         step: 1,
+        extraStep: 0,
     }),
     actions: {
         getExport() {

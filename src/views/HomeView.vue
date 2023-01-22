@@ -10,19 +10,19 @@ const menuOpen = ref(false);
 </script>
 
 <template>
-  <div :class="{'blur': menuOpen}" style="height:400px;position:sticky;top:0">
+  <div :class="{'blur': menuOpen}" style="height:400px;position:sticky;top:0;background:white">
     <nav style="margin:10px">
       <div id="menu-button" class="right d-table" @click="menuOpen = true"><img class="d-cell" src="/icons/menu.png" width="20" /><span
           class="d-cell" style="vertical-align: middle">Menu</span></div>
     </nav>
     <!-- Fitbit outer svg -->
-    <div class="center h-50 d-abs d-flex" style="margin-left: auto; margin-right: auto; right: 0; left: 0">
+    <div class="center d-abs d-flex" style="margin-left: auto; margin-right: auto; right: 0; left: 0">
       <svg width="250" height="250">
         <rect width="100%" height="100%" rx="50" ry="50" stroke="black" stroke-width="30" fill-opacity="0" />
       </svg>
     </div>
     <!-- Whatever is inside the Fitbit should be added below -->
-    <div class="center h-50 d-flex"
+    <div class="center d-flex"
       :style="{ 'font-family': settingsStore.aesthetic == null ? 'inherit' : `${aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].layout[0]}` }">
       <component
         :is="settingsStore.theme == null ? importer('themes', 'NoTheme') : importer('themes', themes[settingsStore.theme as keyof typeof themes].theme)">
