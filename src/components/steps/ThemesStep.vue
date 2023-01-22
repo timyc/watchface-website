@@ -11,7 +11,7 @@ const importer = (type: string, file: string) => defineAsyncComponent(() => impo
         <h2>Choose a theme</h2>
         <div id="themesContainer">
             <div :class="{ 'selected': settingsStore.theme == key }" v-for="theme,key in themes">
-                <svg width="250" height="250" viewBox="100 50 50 180" @click="settingsStore.theme = key;settingsStore.extraStep = 0">
+                <svg width="250" height="250" viewBox="100 50 50 180" @click="settingsStore.theme = key">
                     <component :is="importer('themes', theme.theme)" />
                 </svg>
             </div>
