@@ -3,17 +3,17 @@ export default {
         name: "Sleep",
         icon: "sleep",
         display_methods: {
-            "avg": {
-                name: "Average",
-                text: "~7hr 30min"
+            "today": {
+                name: "Today",
+                text: "7hr 30min"
             },
-            "min": {
-                name: "Minimum",
-                text: "0hr 20min"
+            "percent": {
+                name: "Goal (Percentage)",
+                text: "30%"
             },
-            "max": {
-                name: "Maximum",
-                text: "10hr 15min"
+            "week": {
+                name: "This Week",
+                text: "30hr 15min"
             }
         },
     },
@@ -21,13 +21,13 @@ export default {
         name: "Heart Rate",
         icon: "heart",
         display_methods: {
-            "avg": {
-                name: "Average",
-                text: "~70"
+            "today": {
+                name: "Today",
+                text: "70"
             },
-            "cur": {
-                name: "Current",
-                text: "72"
+            "percent": {
+                name: "Goal (Percentage)",
+                text: "72%"
             },
         },
     },
@@ -49,21 +49,17 @@ export default {
         name: "Steps",
         icon: "footprint",
         display_methods: {
-            "avg": {
-                name: "Average",
-                text: "50,102/day"
-            },
-            "min": {
-                name: "Minimum",
-                text: "191"
-            },
-            "max": {
-                name: "Maximum",
-                text: "103,333"
-            },
             "today": {
-                name: "Today",
-                text: "10,000"
+                name: "Steps Today",
+                text: "18,381"
+            },
+            "percent": {
+                name: "Goal (Percentage)",
+                text: "97%"
+            },
+            "week": {
+                name: "This week",
+                text: "103,333"
             }
         },
     },
@@ -75,58 +71,50 @@ export default {
                 name: "Today",
                 text: "192"
             },
+            "percent": {
+                name: "Goal (Percentage)",
+                text: "53%"
+            },
             "week": {
                 name: "This Week",
                 text: "1,291"
             },
-            "percent": {
-                name: "Goal Today (Percent)",
-                text: "53%"
-            }
         },
     },
     "distance": {
         name: "Distance",
         icon: "footprint",
         display_methods: {
-            "avg": {
-                name: "Average",
-                text: "1.76km/day"
-            },
-            "min": {
-                name: "Minimum",
-                text: "0.12km"
-            },
-            "max": {
-                name: "Maximum",
-                text: "4.23km"
-            },
             "today": {
                 name: "Today",
                 text: "1.23km"
-            }
+            },
+            "percent": {
+                name: "Goal (Percentage)",
+                text: "23%"
+            },
+            "week": {
+                name: "This Week",
+                text: "12.91km"
+            },
         },
     },
     "active_zone": {
         name: "Active Zone",
         icon: "floor",
         display_methods: {
-            "avg": {
-                name: "Average",
-                text: "50min/day"
-            },
-            "min": {
-                name: "Minimum",
-                text: "1min"
-            },
-            "max": {
-                name: "Maximum",
-                text: "1hr 20min"
-            },
             "today": {
                 name: "Today",
-                text: "20min"
-            }
+                text: "10min"
+            },
+            "percent": {
+                name: "Goal (Percentage)",
+                text: "23%"
+            },
+            "week": {
+                name: "This Week",
+                text: "1hr 30min"
+            },
         },
     },
     "weather": {
@@ -143,21 +131,17 @@ export default {
         name: "Floor Count",
         icon: "footprint",
         display_methods: {
-            "avg": {
-                name: "Average",
-                text: "50,102/day"
-            },
-            "min": {
-                name: "Minimum",
-                text: "191"
-            },
-            "max": {
-                name: "Maximum",
-                text: "103,333"
-            },
             "today": {
-                name: "Today",
-                text: "10,000"
+                name: "Floor Count Today",
+                text: "1,121"
+            },
+            "percent": {
+                name: "Goal (Percentage)",
+                text: "33%"
+            },
+            "week": {
+                name: "This week",
+                text: "4,888"
             }
         },
     },
