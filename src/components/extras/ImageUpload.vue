@@ -15,6 +15,9 @@ export default {
     emits: ['complete'],
     setup() {
         const settingsStore = useSettingsStore();
+        if (settingsStore.customImage == null) {
+            settingsStore.extraStep = 0;
+        }
         return {
             settingsStore,
         }
