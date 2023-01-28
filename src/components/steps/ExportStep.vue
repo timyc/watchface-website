@@ -3,23 +3,35 @@ import { useSettingsStore } from '@/stores/settings';
 import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
+import layouts from '@/data/layouts';
 const settingsStore = useSettingsStore();
-function zip() {
+async function zip() {
     JSZipUtils.getBinaryContent('full.zip', function (err: any, data: any) {
         if (err) {
             throw err; // or handle err
         }
 
         JSZip.loadAsync(data).then(async function (res) {
-            // change app/index.js with regex
-            await res.file('app/index.js')!.async('string').then(function (data) {
-                let newFile = data.replace(/(clock.granularity = )(.+)(;)/g, '$1' + settingsStore.layout + '$3');
-                res.file('app/index.js', newFile);
-                // download new zip file
-                res.generateAsync({ type: "blob" }).then(function (content) {
-                    // see FileSaver.js
-                    saveAs(content, "watchface.zip");
-                });
+            await res.file('resources/index.view')!.async('string').then(function (data) {
+                // icon coords
+                let newLayout = data.replace(/(!y1_1!)/g, `${parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[0].y1)}%`);
+                newLayout = newLayout.replace(/(!y1_2!)/g, `${parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[1].y1)}%`);
+                newLayout = newLayout.replace(/(!y1_3!)/g, `${parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[2].y1)}%`);
+                newLayout = newLayout.replace(/(!y1_4!)/g, `${parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[3].y1)}%`);
+                newLayout = newLayout.replace(/(!x1_1!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[0].x1)}%`);
+                newLayout = newLayout.replace(/(!x1_2!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[1].x1)}%`);
+                newLayout = newLayout.replace(/(!x1_3!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[2].x1)}%`);
+                newLayout = newLayout.replace(/(!x1_4!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[3].x1)}%`);
+                // time coords
+                newLayout = newLayout.replace(/(!x_1!)/g, `${Math.ceil(30 * parseFloat(layouts[settingsStore.layout as keyof typeof layouts].interface[0].x))}%`);
+                newLayout = newLayout.replace(/(!y_1!)/g, `${Math.ceil(30 * parseFloat(layouts[settingsStore.layout as keyof typeof layouts].interface[0].y))}%`);
+                // date coords
+                newLayout = newLayout.replace(/(!x_2!)/g, `${Math.ceil(30 * parseFloat(layouts[settingsStore.layout as keyof typeof layouts].interface[1].x))}%`);
+                newLayout = newLayout.replace(/(!y_2!)/g, `${Math.ceil(30 * parseFloat(layouts[settingsStore.layout as keyof typeof layouts].interface[1].y))}%`);
+                res.file('resources/index.view', newLayout);
+            });
+            await res.generateAsync({ type: "blob" }).then(function (content) {
+                saveAs(content, "watchface.zip");
             });
 
         });
