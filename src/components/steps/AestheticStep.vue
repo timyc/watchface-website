@@ -1,13 +1,14 @@
 <script lang="ts">
 import { useSettingsStore } from '@/stores/settings';
 import aesthetics from '@/data/aesthetics';
+import themes from '@/data/themes';
 export default {
     name: 'AestheticStep',
     setup() {
         const settingsStore = useSettingsStore();
         settingsStore.aestheticFlag = true;
         return {
-            settingsStore, aesthetics,
+            settingsStore, aesthetics, themes
         };
     },
 }
@@ -22,6 +23,7 @@ export default {
         </div>
         <div :class="{'aestheticChoice': true, 'selectedChoice': settingsStore.aesthetic == null, 'd-table': true}" @click="settingsStore.aesthetic = null">
             <span class="d-cell left" style="margin-right:auto;vertical-align:middle">Default</span>
+            <span class="d-cell right" style="margin-left:auto"><span class="colorPreview" v-for="color in themes[settingsStore.theme as keyof typeof themes].default" :style="{'background-color': color}"></span></span>
         </div>
     </div>
     <footer class="d-flex d-sb">
