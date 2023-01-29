@@ -31,6 +31,29 @@ async function zip() {
                 // date coords
                 newLayout = newLayout.replace(/(!x_2!)/g, `${Math.ceil(30 * parseFloat(layouts[settingsStore.layout as keyof typeof layouts].interface[1].x))}%`);
                 newLayout = newLayout.replace(/(!y_2!)/g, `${Math.ceil(30 * parseFloat(layouts[settingsStore.layout as keyof typeof layouts].interface[1].y))}%`);
+                // icons
+                if (settingsStore.fields.length == 4) {
+                    newLayout = newLayout.replace(/(!stat_1!)/g, settingsStore.fields[0].stat);
+                    newLayout = newLayout.replace(/(!stat_2!)/g, settingsStore.fields[1].stat);
+                    newLayout = newLayout.replace(/(!stat_3!)/g, settingsStore.fields[2].stat);
+                    newLayout = newLayout.replace(/(!stat_4!)/g, settingsStore.fields[3].stat);
+                } else if (settingsStore.fields.length == 3) {
+                    newLayout = newLayout.replace(/(!stat_1!)/g, settingsStore.fields[0].stat);
+                    newLayout = newLayout.replace(/(!stat_2!)/g, settingsStore.fields[1].stat);
+                    newLayout = newLayout.replace(/(!stat_3!)/g, settingsStore.fields[2].stat);
+                    newLayout = newLayout.replace(/(!stat_4!)/g, 'none');
+                } else if (settingsStore.fields.length == 2) {
+                    newLayout = newLayout.replace(/(!stat_1!)/g, settingsStore.fields[0].stat);
+                    newLayout = newLayout.replace(/(!stat_2!)/g, settingsStore.fields[1].stat);
+                    newLayout = newLayout.replace(/(!stat_3!)/g, 'none');
+                    newLayout = newLayout.replace(/(!stat_4!)/g, 'none');
+                } else if (settingsStore.fields.length == 1) {
+                    newLayout = newLayout.replace(/(!stat_1!)/g, settingsStore.fields[0].stat);
+                    newLayout = newLayout.replace(/(!stat_2!)/g, 'none');
+                    newLayout = newLayout.replace(/(!stat_3!)/g, 'none');
+                    newLayout = newLayout.replace(/(!stat_4!)/g, 'none');
+                }
+                newLayout = newLayout.replace(/(!theme!)/g, settingsStore.theme);
                 res.file('resources/index.view', newLayout);
             });
             // aesthetic/theme edit
@@ -39,6 +62,30 @@ async function zip() {
                 newTheme = newTheme.replace(/(!theme1!)/g, settingsStore.aesthetic == null ? themes[settingsStore.theme as keyof typeof themes].default[1] : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[1]);
                 res.file(`resources/${settingsStore.theme}.defs`, newTheme);
             });
+            await res.file(`resources/config.json`)!.async('string').then(function(data) {
+                let newTheme = data.replace(/(!theme!)/g, settingsStore.theme);
+                res.file(`resources/config.json`, newTheme);
+            });
+            await res.file(`resources/widget.defs`)!.async('string').then(function(data) {
+                let newTheme = data.replace(/(!theme!)/g, settingsStore.theme);
+                res.file(`resources/widget.defs`, newTheme);
+            });
+            await res.file(`app/index.js`)!.async('string').then(function(data) {
+                let newTheme = data.replace(/(!theme!)/g, settingsStore.theme);
+                res.file(`app/index.js`, newTheme);
+            });
+            if (settingsStore.customImage != null) {
+                // convert base64 customImage to blob and save it
+                const byteString = atob(settingsStore.customImage.split(',')[1]);
+                const mimeString = settingsStore.customImage.split(',')[0].split(':')[1].split(';')[0];
+                const ab = new ArrayBuffer(byteString.length);
+                const ia = new Uint8Array(ab);
+                for (let i = 0; i < byteString.length; i++) {
+                    ia[i] = byteString.charCodeAt(i);
+                }
+                const blob = new Blob([ab], { type: mimeString });
+                res.file(`resources/placeholder.png`, blob);
+            }
             await res.generateAsync({ type: "blob" }).then(function (content) {
                 saveAs(content, "watchface.zip");
             });

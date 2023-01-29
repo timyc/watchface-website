@@ -17,7 +17,7 @@ export default {
             }
         },
     },
-    "heart_rate": {
+    "hrm": {
         name: "Heart Rate",
         icon: "heart",
         display_methods: {
@@ -45,7 +45,7 @@ export default {
             },
         },
     },
-    "steps": {
+    "stp": {
         name: "Steps",
         icon: "footprint",
         display_methods: {
@@ -99,7 +99,7 @@ export default {
             },
         },
     },
-    "active_zone": {
+    "azm": {
         name: "Active Zone",
         icon: "floor",
         display_methods: {
@@ -127,7 +127,7 @@ export default {
             },
         },
     },
-    "floor_count": {
+    "flr": {
         name: "Floor Count",
         icon: "footprint",
         display_methods: {
