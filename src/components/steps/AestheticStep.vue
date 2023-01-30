@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div v-if="settingsStore.theme != null">
         <h2>Apply an aesthetic</h2>
         <div :class="{'aestheticChoice': true, 'selectedChoice': key == settingsStore.aesthetic, 'd-table': true}" v-for="aesthetic,key in aesthetics" @click="settingsStore.aesthetic = key" :style="{'font-family': aesthetic.layout[0]}">
             <span class="d-cell left" style="margin-right:auto;vertical-align:middle">{{ aesthetic.name }}</span>
@@ -25,6 +25,9 @@ export default {
             <span class="d-cell left" style="margin-right:auto;vertical-align:middle">Default</span>
             <span class="d-cell right" style="margin-left:auto"><span class="colorPreview" v-for="color in themes[settingsStore.theme as keyof typeof themes].default" :style="{'background-color': color}"></span></span>
         </div>
+    </div>
+    <div v-else>
+        <h2>Choose a theme first</h2>
     </div>
     <footer class="d-flex d-sb">
         <BackButton :step="2" />

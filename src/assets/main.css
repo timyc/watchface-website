@@ -87,6 +87,10 @@ body {
     color: red;
 }
 
+.green {
+    color: green;
+}
+
 .clickable {
     cursor: pointer;
 }

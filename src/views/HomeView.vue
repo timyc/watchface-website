@@ -34,6 +34,23 @@ const menuOpen = ref(false);
 
   <!-- Last row for option choosing -->
   <div :class="{'blur': menuOpen}" class="center d-flex" style="flex-direction:column">
+    <div class="stepsContainer clickable">
+      <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 3}" @click="settingsStore.step = 3">
+        <div>Layout</div>
+      </li>
+      <hr />
+      <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 4}" @click="settingsStore.step = 4">
+        <div>Data</div>
+      </li>
+      <hr />
+      <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 6}" @click="settingsStore.step = 6">
+        <div>Theme</div>
+      </li>
+      <hr />
+      <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 8}" @click="settingsStore.step = 8">
+        <div>Aesthetic</div>
+      </li>
+    </div>
     <IntroStep v-if="settingsStore.step == 1" />
     <CheckpointStep :num="1" text="Customize your data" v-if="settingsStore.step == 2" />
     <LayoutStep v-if="settingsStore.step == 3" />
@@ -63,6 +80,7 @@ const menuOpen = ref(false);
         <div class="menuOption clickable" @click="settingsStore.step = 8;menuOpen = false">Aesthetic</div>
         <div class="d-cell right" v-if="settingsStore.aestheticFlag == true"><img src="/icons/checkmark.png" width="20" /></div>
       </div>
+      <div class="menuOption clickable green" @click="settingsStore.step = 9;menuOpen = false">Export</div>
     </div>
   </div>
 </template>
@@ -88,5 +106,23 @@ const menuOpen = ref(false);
 }
 .blur {
   filter: blur(5px);
+}
+.stepsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.stepsItem {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.stepsItem:hover {
+  background: #ebeaea;
+}
+.youAreHere {
+  background: #D9D9D9;
 }
 </style>
