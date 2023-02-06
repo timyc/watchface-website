@@ -25,6 +25,15 @@ async function zip() {
                 newLayout = newLayout.replace(/(!x1_2!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[1].x1)}%`);
                 newLayout = newLayout.replace(/(!x1_3!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[2].x1)}%`);
                 newLayout = newLayout.replace(/(!x1_4!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[3].x1)}%`);
+
+                newLayout = newLayout.replace(/(!y2_1!)/g, `${parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[0].y2)}%`);
+                newLayout = newLayout.replace(/(!y2_2!)/g, `${parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[1].y2)}%`);
+                newLayout = newLayout.replace(/(!y2_3!)/g, `${parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[2].y2)}%`);
+                newLayout = newLayout.replace(/(!y2_4!)/g, `${parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[3].y2)}%`);
+                newLayout = newLayout.replace(/(!x2_1!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[0].x2)}%`);
+                newLayout = newLayout.replace(/(!x2_2!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[1].x2)}%`);
+                newLayout = newLayout.replace(/(!x2_3!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[2].x2)}%`);
+                newLayout = newLayout.replace(/(!x2_4!)/g, `${5 + parseInt(layouts[settingsStore.layout as keyof typeof layouts].stats[3].x2)}%`);
                 // time coords
                 newLayout = newLayout.replace(/(!x_1!)/g, `${Math.ceil(30 * parseFloat(layouts[settingsStore.layout as keyof typeof layouts].interface[0].x))}%`);
                 newLayout = newLayout.replace(/(!y_1!)/g, `${Math.ceil(30 * parseFloat(layouts[settingsStore.layout as keyof typeof layouts].interface[0].y))}%`);
@@ -64,6 +73,7 @@ async function zip() {
             });
             await res.file(`resources/config.json`)!.async('string').then(function(data) {
                 let newTheme = data.replace(/(!theme!)/g, settingsStore.theme);
+                newTheme = newTheme.replace(/(!stats!)/g, JSON.stringify(settingsStore.fields));
                 res.file(`resources/config.json`, newTheme);
             });
             await res.file(`resources/widget.defs`)!.async('string').then(function(data) {
