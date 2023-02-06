@@ -27,8 +27,7 @@ export default {
             </div>
         </div>
     </div>
-    <footer class="d-flex d-sb">
-        <BackButton :step="2" />
+    <footer class="d-flex center">
         <ContinueButton v-if="settingsStore.layout != null" />
     </footer>
 </template>

@@ -34,7 +34,7 @@ const menuOpen = ref(false);
 
   <!-- Last row for option choosing -->
   <div :class="{'blur': menuOpen}" class="center d-flex" style="flex-direction:column">
-    <div class="stepsContainer clickable">
+    <!--<div class="stepsContainer clickable">
       <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 3}" @click="settingsStore.step = 3">
         <div>Layout</div>
       </li>
@@ -50,7 +50,7 @@ const menuOpen = ref(false);
       <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 8}" @click="settingsStore.step = 8">
         <div>Aesthetic</div>
       </li>
-    </div>
+    </div>-->
     <IntroStep v-if="settingsStore.step == 1" />
     <CheckpointStep :num="1" text="Customize your data" v-if="settingsStore.step == 2" />
     <LayoutStep v-if="settingsStore.step == 3" />

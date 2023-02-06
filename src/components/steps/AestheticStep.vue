@@ -29,8 +29,7 @@ export default {
     <div v-else>
         <h2>Choose a theme first</h2>
     </div>
-    <footer class="d-flex d-sb">
-        <BackButton :step="2" />
+    <footer class="d-flex center">
         <ContinueButton />
     </footer>
 </template>

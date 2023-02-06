@@ -27,9 +27,8 @@ const importer = (type: string, file: string) => defineAsyncComponent(() => impo
             </div>
         </template>
     </div>
-    <footer class="d-flex d-sb">
-        <BackButton :step="2" />
-        <ContinueButton v-if="settingsStore.theme != null && settingsStore.extraStep >= themes[settingsStore.theme as keyof typeof themes].extra.length" />
+    <footer class="d-flex center">
+        <ContinueButton v-if="settingsStore.theme != null && settingsStore.extraStep >= themes[settingsStore.theme as keyof typeof themes].extra.length" :step="2" />
     </footer>
 </template>
 

@@ -8,11 +8,19 @@ export default {
         settingsStore,
         };
     },
+    props: {
+        step: {
+            type: Number,
+            default() {
+                return 1;
+            }
+        },
+    },
 }
 </script>
 
 <template>
-    <div class="right contBtn" @click="settingsStore.step++">Continue</div>
+    <div class="right contBtn" @click="settingsStore.step += step">Continue</div>
 </template>
 
 <style scoped>

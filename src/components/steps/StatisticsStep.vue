@@ -46,9 +46,8 @@ export default {
             </draggable>
         </div>
     </div>
-    <footer class="d-flex d-sb">
-        <BackButton />
-        <ContinueButton v-if="settingsStore.fields.length > 0" />
+    <footer class="d-flex center">
+        <ContinueButton v-if="settingsStore.fields.length > 0" :step="2" />
     </footer>
 </template>
 

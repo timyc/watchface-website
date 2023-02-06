@@ -115,8 +115,7 @@ async function zip() {
     <div v-else>
         <h2>Please select a theme, layout, and at least one field to export your watch face.</h2>
     </div>
-    <footer class="d-flex d-sb">
-        <BackButton />
+    <footer class="d-flex center">
     </footer>
 </template>
 
