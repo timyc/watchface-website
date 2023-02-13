@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { defineAsyncComponent, ref } from 'vue';
+import { importer } from '@/helpers/common';
 import { useSettingsStore } from '@/stores/settings';
 import aesthetics from '@/data/aesthetics';
 import layouts from '@/data/layouts';
 import themes from '@/data/themes';
 const settingsStore = useSettingsStore();
-const importer = (type: string, file: string) => defineAsyncComponent(() => import(`@/components/${type}/${file}.vue`));
 const menuOpen = ref(false);
 </script>
 
