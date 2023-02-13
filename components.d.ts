@@ -32,8 +32,10 @@ declare module '@vue/runtime-core' {
     SelectedStatItem: typeof import('./src/components/items/SelectedStatItem.vue')['default']
     StandardLayout: typeof import('./src/components/layouts/StandardLayout.vue')['default']
     StatisticItem: typeof import('./src/components/items/StatisticItem.vue')['default']
+    StatisticItemCentered: typeof import('./src/components/items/StatisticItemCentered.vue')['default']
     StatisticsStep: typeof import('./src/components/steps/StatisticsStep.vue')['default']
     ThemesStep: typeof import('./src/components/steps/ThemesStep.vue')['default']
+    TopIconLayout: typeof import('./src/components/layouts/TopIconLayout.vue')['default']
     TopLayout: typeof import('./src/components/layouts/TopLayout.vue')['default']
   }
 }

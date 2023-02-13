@@ -5,9 +5,9 @@
             d="M2.33268 2.02449V3.83366H0.166016L0.166016 8.16699H2.33268L2.33268 9.97616C2.33268 10.767 2.98268 11.417 3.77352 11.417L20.381 11.417C21.1827 11.417 21.8327 10.767 21.8327 9.97616V2.03533C21.8327 1.23366 21.1827 0.58366 20.3918 0.58366L3.77352 0.58366C2.98268 0.58366 2.33268 1.23366 2.33268 2.02449Z"
             fill="white" />
     </svg>
-    <text x="0.3" y="0.8" font-size="0.5px" fill="white">10:12</text>
+    <text x="0.75" y="1.3" font-size="0.5px" fill="white">10:12</text>
     <text font-size="0.25px" fill="white">
-        <tspan x="0.3" y="1.25">Friday, September</tspan>
-        <tspan x="0.3" y="1.55">14th</tspan>
+        <tspan x="0.3" y="1.75">Friday, September</tspan>
+        <tspan x="0.3" y="2.05">14th</tspan>
     </text>
 </template>
