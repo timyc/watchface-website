@@ -15,7 +15,7 @@ export const useSettingsStore = defineStore("settingsStore", {
         bandaid: true,
         errorText: '',
         fields: [] as field[],
-        step: 1,
+        step: 3,
         extraStep: 0,
         aestheticFlag: false,
     }),
