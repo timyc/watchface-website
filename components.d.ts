@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     BarredTopIconLayout: typeof import('./src/components/layouts/BarredTopIconLayout.vue')['default']
     BigTimeLayout: typeof import('./src/components/layouts/BigTimeLayout.vue')['default']
     BottomLayout: typeof import('./src/components/layouts/BottomLayout.vue')['default']
+    BottomThreeBarredLayout: typeof import('./src/components/layouts/BottomThreeBarredLayout.vue')['default']
     CheckpointStep: typeof import('./src/components/steps/CheckpointStep.vue')['default']
     ContinueButton: typeof import('./src/components/buttons/ContinueButton.vue')['default']
     CornerLayout: typeof import('./src/components/layouts/CornerLayout.vue')['default']
