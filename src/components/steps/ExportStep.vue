@@ -106,14 +106,14 @@ async function zip() {
 </script>
 
 <template>
-    <div v-if="settingsStore.theme != null && settingsStore.layout != null && settingsStore.fields.length > 0">
+    <div v-if="settingsStore.theme != null && settingsStore.layout != null">
         <h2>Export your customized watch face</h2>
         <div id="exportBtn" class="clickable" @click="zip">Export Style</div>
         <!--<h3>Debug Output</h3>
         <textarea v-html="settingsStore.getExport()" style="width: 70vw;height:200px"></textarea>-->
     </div>
     <div v-else>
-        <h2>Please select a theme, layout, and at least one field to export your watch face.</h2>
+        <h2>Please select a theme and a layout to export your watch face.</h2>
     </div>
     <footer class="d-flex center">
     </footer>
