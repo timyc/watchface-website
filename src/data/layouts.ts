@@ -3,7 +3,7 @@ export default {
         "type": "Standard",
         "interface": [
             {
-                "x": "0.3",
+                "x": "0.8",
                 "y": "0.8"
             },
             {
@@ -15,6 +15,7 @@ export default {
                 "y": "1.55"
             },
         ],
+        "statCount": 4,
         "stats": [
             {
                 "x1": "5%",
@@ -46,7 +47,7 @@ export default {
         "type": "Standard",
         "interface": [
             {
-                "x": "0.3",
+                "x": "0.8",
                 "y": "1.8"
             },
             {
@@ -58,6 +59,7 @@ export default {
                 "y": "2.55"
             },
         ],
+        "statCount": 4,
         "stats": [
             {
                 "x1": "5%",
@@ -89,7 +91,7 @@ export default {
         "type": "Standard",
         "interface": [
             {
-                "x": "0.3",
+                "x": "0.8",
                 "y": "1.3"
             },
             {
@@ -101,6 +103,7 @@ export default {
                 "y": "1.95"
             },
         ],
+        "statCount": 4,
         "stats": [
             {
                 "x1": "5%",
@@ -132,7 +135,7 @@ export default {
         "type": "Standard",
         "interface": [
             {
-                "x": "0.3",
+                "x": "0.8",
                 "y": "0.8"
             },
             {
@@ -144,6 +147,7 @@ export default {
                 "y": "1.55"
             },
         ],
+        "statCount": 4,
         "stats": [
             {
                 "x1": "5%",
@@ -175,7 +179,7 @@ export default {
         "type": "Standard",
         "interface": [
             {
-                "x": "0.3",
+                "x": "0.8",
                 "y": "0.8"
             },
             {
@@ -187,6 +191,7 @@ export default {
                 "y": "1.55"
             },
         ],
+        "statCount": 4,
         "stats": [
             {
                 "x1": "82%",
@@ -230,6 +235,7 @@ export default {
                 "y": "2.7"
             },
         ],
+        "statCount": 4,
         "stats": [
             {
                 "x1": "45%",
@@ -273,6 +279,7 @@ export default {
                 "y": "2.7"
             },
         ],
+        "statCount": 4,
         "stats": [
             {
                 "x1": "5%",
@@ -316,6 +323,7 @@ export default {
                 "y": "2.55"
             },
         ],
+        "statCount": 4,
         "stats": [
             {
                 "x1": "15%",
@@ -359,6 +367,7 @@ export default {
                 "y": "1.85"
             },
         ],
+        "statCount": 4,
         "stats": [
             {
                 "x1": "15%",
@@ -383,6 +392,50 @@ export default {
                 "y1": "73%",
                 "x2": "81%",
                 "y2": "90%",
+            },
+        ]
+    },
+    "three_bottom_top_icon": {
+        "type": "TopIcon",
+        "interface": [
+            {
+                "x": "0.8",
+                "y": "1.2"
+            },
+            {
+                "x": "0.3",
+                "y": "1.55"
+            },
+            {
+                "x": "0.3",
+                "y": "1.85"
+            },
+        ],
+        "statCount": 3,
+        "stats": [
+            {
+                "x1": "20%",
+                "y1": "70%",
+                "x2": "26%",
+                "y2": "87%",
+            },
+            {
+                "x1": "43%",
+                "y1": "73%",
+                "x2": "49%",
+                "y2": "90%",
+            },
+            {
+                "x1": "65%",
+                "y1": "70%",
+                "x2": "71%",
+                "y2": "87%",
+            },
+            {
+                "x1": "999%",
+                "y1": "999%",
+                "x2": "999%",
+                "y2": "999%",
             },
         ]
     }

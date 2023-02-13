@@ -1,6 +1,7 @@
 <script lang="ts">
 import { useSettingsStore } from '@/stores/settings';
 import statistics from '@/data/statistics';
+import layouts from '@/data/layouts';
 import draggable from 'vuedraggable';
 
 export default {
@@ -11,7 +12,7 @@ export default {
     setup() {
         const settingsStore = useSettingsStore();
         return {
-            settingsStore, statistics,
+            settingsStore, statistics, layouts
         };
     },
     methods: {
@@ -26,7 +27,7 @@ export default {
     <div>
         <div id="statisticsContainer">
             <h2>Please select the data points you would like to have</h2>
-            <div id="statisticsBox" v-if="settingsStore.fields.length < 4">
+            <div id="statisticsBox" v-if="settingsStore.fields.length < (settingsStore.layout != null ? layouts[settingsStore.layout as keyof typeof layouts].statCount : 0)">
                 <div id="statisticsSelector">Add statistic</div>
                 <div id="statisticsChoices">
                     <template v-for="value,index in statistics" :key="value.name">
@@ -47,7 +48,7 @@ export default {
         </div>
     </div>
     <footer class="d-flex center">
-        <ContinueButton v-if="settingsStore.fields.length > 0" :step="2" />
+        <ContinueButton :step="2" />
     </footer>
 </template>
 
