@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     Amogus: typeof import('./src/components/themes/Amogus.vue')['default']
     AmongUsCustom: typeof import('./src/components/extras/AmongUsCustom.vue')['default']
     BackButton: typeof import('./src/components/buttons/BackButton.vue')['default']
+    BigTimeLayout: typeof import('./src/components/layouts/BigTimeLayout.vue')['default']
     BottomLayout: typeof import('./src/components/layouts/BottomLayout.vue')['default']
     CheckpointStep: typeof import('./src/components/steps/CheckpointStep.vue')['default']
     ContinueButton: typeof import('./src/components/buttons/ContinueButton.vue')['default']
