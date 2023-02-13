@@ -34,17 +34,13 @@ export default {
 <style scoped>
 #layoutContainer {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     width: 90vw;
-    overflow-x: scroll;
-    overflow-y: hidden;
 }
 
-#layoutContainer > div:first-child {
-    margin-left: auto;
-}
-
-#layoutContainer > div:last-child {
-    margin-right: auto;
+#layoutContainer > div {
+    width: 250px;
+    margin: 0 20px;
 }
 </style>
