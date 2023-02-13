@@ -51,7 +51,6 @@ const menuOpen = ref(false);
         <div>Aesthetic</div>
       </li>
     </div>-->
-    <IntroStep v-if="settingsStore.step == 1" />
     <CheckpointStep :num="1" text="Customize your data" v-if="settingsStore.step == 2" />
     <LayoutStep v-if="settingsStore.step == 3" />
     <StatisticsStep v-if="settingsStore.step == 4" />
@@ -65,16 +64,16 @@ const menuOpen = ref(false);
     <div id="menu" class="d-table">
       <img class="d-cell clickable" src="/icons/close.png" width="20" style="margin-left: auto" @click="menuOpen = false" />
       <div class="d-table w-100p">
+        <div class="menuOption clickable" @click="settingsStore.step = 3;menuOpen = false">Layout</div>
+        <div class="d-cell right" v-if="settingsStore.layout != null"><img src="/icons/checkmark.png" width="20" /></div>
+      </div>
+      <div class="d-table w-100p">
         <div class="menuOption clickable d-cell" @click="settingsStore.step = 4;menuOpen = false">Data</div>
         <div class="d-cell right" v-if="settingsStore.fields.length > 0"><img src="/icons/checkmark.png" width="20" /></div>
       </div>
       <div class="d-table w-100p">
         <div class="menuOption clickable" @click="settingsStore.step = 6;menuOpen = false">Theme</div>
         <div class="d-cell right" v-if="settingsStore.theme != null"><img src="/icons/checkmark.png" width="20" /></div>
-      </div>
-      <div class="d-table w-100p">
-        <div class="menuOption clickable" @click="settingsStore.step = 3;menuOpen = false">Layout</div>
-        <div class="d-cell right" v-if="settingsStore.layout != null"><img src="/icons/checkmark.png" width="20" /></div>
       </div>
       <div class="d-table w-100p">
         <div class="menuOption clickable" @click="settingsStore.step = 8;menuOpen = false">Aesthetic</div>
