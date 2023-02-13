@@ -32,6 +32,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SelectedStatItem: typeof import('./src/components/items/SelectedStatItem.vue')['default']
+    SoloLayout: typeof import('./src/components/layouts/SoloLayout.vue')['default']
     StandardLayout: typeof import('./src/components/layouts/StandardLayout.vue')['default']
     StatisticItem: typeof import('./src/components/items/StatisticItem.vue')['default']
     StatisticItemCentered: typeof import('./src/components/items/StatisticItemCentered.vue')['default']
