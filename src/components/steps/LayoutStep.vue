@@ -10,6 +10,16 @@ export default {
             settingsStore, layouts, importer
         };
     },
+    methods: {
+        updateSelected(e: Element) {
+            // remove all other selected classes
+            const selected = document.querySelectorAll('.selected');
+            selected.forEach((el) => {
+                el.classList.remove('selected');
+            });
+            e.classList.add('selected');
+        }
+    }
 }
 </script>
 
@@ -17,7 +27,7 @@ export default {
     <div>
         <h2>Choose a layout option</h2>
         <div id="layoutContainer">
-            <div v-for="layout,key in layouts" :key="key" @click="settingsStore.layout = key" v-once>
+            <div v-for="layout,key in layouts" :key="key" :class="{'selected': settingsStore.layout == key}" @click="settingsStore.layout = key;updateSelected($event.currentTarget as Element)" v-once>
                 <component
                     :is="importer('themes', 'NoTheme')">
                     <component

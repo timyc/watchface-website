@@ -31,7 +31,7 @@ export default {
             },
         },
     },
-    "spo2": {
+    /*"spo2": {
         name: "SpO2",
         icon: "heart",
         display_methods: {
@@ -44,7 +44,7 @@ export default {
                 text: "33%"
             },
         },
-    },
+    },*/
     "stp": {
         name: "Steps",
         icon: "footprint",
