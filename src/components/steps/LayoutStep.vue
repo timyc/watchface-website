@@ -17,7 +17,7 @@ export default {
     <div>
         <h2>Choose a layout option</h2>
         <div id="layoutContainer">
-            <div v-for="layout,key in layouts" :key="key" :class="{'selected': settingsStore.layout == key}" @click="settingsStore.layout = key">
+            <div v-for="layout,key in layouts" :key="key" @click="settingsStore.layout = key" v-once>
                 <component
                     :is="importer('themes', 'NoTheme')">
                     <component
@@ -34,13 +34,17 @@ export default {
 <style scoped>
 #layoutContainer {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
     width: 90vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
-#layoutContainer > div {
-    width: 250px;
-    margin: 0 20px;
+#layoutContainer > div:first-child {
+    margin-left: auto;
+}
+
+#layoutContainer > div:last-child {
+    margin-right: auto;
 }
 </style>
