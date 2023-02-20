@@ -1,4 +1,23 @@
 export default {
+    "none": {
+        "type": "No",
+        "interface": [
+            {
+                "x": "0.8",
+                "y": "1.3"
+            },
+            {
+                "x": "0.3",
+                "y": "1.75"
+            },
+            {
+                "x": "0.3",
+                "y": "2.05"
+            },
+        ],
+        "statCount": 0,
+        "stats": []
+    },
     "bottom": {
         "type": "Standard",
         "interface": [

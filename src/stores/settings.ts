@@ -7,7 +7,7 @@ export interface field {
 
 export const useSettingsStore = defineStore("settingsStore", {
     state: () => ({
-        layout: null as unknown as string,
+        layout: 'none',
         theme: null as unknown as string,
         aesthetic: null as unknown as string | null,
         customImage: null as unknown as string,
