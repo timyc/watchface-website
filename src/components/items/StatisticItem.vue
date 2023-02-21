@@ -48,6 +48,6 @@ export default {
     </svg>
     <text :x="coords.x2" :y="coords.y2" dominant-baseline="middle" :text-anchor="parseInt(coords.x1) > 80 ? 'end' : 'start'" :fill="settingsStore.aesthetic == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]" :font-size="size">
     {{ //@ts-ignore 
-        stat == null ? 'Statistic' : statistics[stat.stat as keyof typeof statistics].display_methods[stat.mode].text }}
+        stat == null ? 'Stat' : statistics[stat.stat as keyof typeof statistics].display_methods[stat.mode].text }}
     </text>
 </template>

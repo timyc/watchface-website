@@ -46,5 +46,6 @@ declare module '@vue/runtime-core' {
     ThemesStep: typeof import('./src/components/steps/ThemesStep.vue')['default']
     TopIconLayout: typeof import('./src/components/layouts/TopIconLayout.vue')['default']
     TopLayout: typeof import('./src/components/layouts/TopLayout.vue')['default']
+    TopThreeIconLayout: typeof import('./src/components/layouts/TopThreeIconLayout.vue')['default']
   }
 }

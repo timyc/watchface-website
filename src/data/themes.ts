@@ -32,7 +32,7 @@ export default {
     "hearts": {
         theme: "Hearts",
         name: "Hearts",
-        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
+        default: ["#FFFFFF", "#FFFFFF", "#000000"],
         extra: [],
     },
     "spacenaut": {
