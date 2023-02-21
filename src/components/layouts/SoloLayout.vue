@@ -2,6 +2,7 @@
 import { useSettingsStore } from '@/stores/settings';
 import statistics from '@/data/statistics';
 import aesthetics from '@/data/aesthetics';
+import themes from '@/data/themes';
 import layouts from '@/data/layouts';
 export default {
     name: 'SoloLayout',
@@ -15,7 +16,7 @@ export default {
     setup() {
         const settingsStore = useSettingsStore();
         return {
-            settingsStore, statistics, aesthetics, layouts
+            settingsStore, statistics, aesthetics, layouts, themes
         };
     },
 }
@@ -29,8 +30,8 @@ export default {
             :fill="settingsStore.aesthetic == null ? 'white' : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]" />
     </svg>
     <StatisticItem v-if="settingsStore.fields.length == 0 || settingsStore.fields.length >= 1" :stat="settingsStore.fields.length == 0 ? null : settingsStore.fields[0]" :coords="layouts[layout == null ? settingsStore.layout as keyof typeof layouts : layout as keyof typeof layouts].stats[0]" />
-    <text :x="layouts[layout == null ? settingsStore.layout as keyof typeof layouts : layout as keyof typeof layouts].interface[0].x" :y="layouts[layout == null ? settingsStore.layout as keyof typeof layouts : layout as keyof typeof layouts].interface[0].y" font-size="1px" :fill="settingsStore.aesthetic == null ? 'white' : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]">10:12</text>
-    <text font-size="0.15px" :fill="settingsStore.aesthetic == null ? 'white' : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]">
+    <text :x="layouts[layout == null ? settingsStore.layout as keyof typeof layouts : layout as keyof typeof layouts].interface[0].x" :y="layouts[layout == null ? settingsStore.layout as keyof typeof layouts : layout as keyof typeof layouts].interface[0].y" font-size="1px" :fill="settingsStore.aesthetic == null ? (settingsStore.theme == null ? 'white' : themes[settingsStore.theme as keyof typeof themes].default[2]) : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]">10:12</text>
+    <text font-size="0.15px" :fill="settingsStore.aesthetic == null ? (settingsStore.theme == null ? 'white' : themes[settingsStore.theme as keyof typeof themes].default[2]) : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]">
         <tspan :x="layouts[layout == null ? settingsStore.layout as keyof typeof layouts : layout as keyof typeof layouts].interface[1].x" :y="layouts[layout == null ? settingsStore.layout as keyof typeof layouts : layout as keyof typeof layouts].interface[1].y">Friday, September</tspan>
         <tspan :x="layouts[layout == null ? settingsStore.layout as keyof typeof layouts : layout as keyof typeof layouts].interface[2].x" :y="layouts[layout == null ? settingsStore.layout as keyof typeof layouts : layout as keyof typeof layouts].interface[2].y">14th</tspan>
     </text>

@@ -4,14 +4,22 @@ import { useSettingsStore } from '@/stores/settings';
 import themes from '@/data/themes';
 const settingsStore = useSettingsStore();
 const importer = (type: string, file: string) => defineAsyncComponent(() => import(`@/components/${type}/${file}.vue`));
+const updateSelected = (e: Element) => {
+    // remove all other selected classes
+    const selected = document.querySelectorAll('.selected');
+    selected.forEach((el) => {
+        el.classList.remove('selected');
+    });
+    e.classList.add('selected');
+}
 </script>
 
 <template>
     <div>
         <h2>Choose a theme</h2>
         <div id="themesContainer">
-            <div :class="{ 'selected': settingsStore.theme == key }" v-for="theme,key in themes">
-                <svg width="250" height="250" viewBox="100 50 50 180" @click="settingsStore.theme = key">
+            <div :class="{ 'selected': settingsStore.theme == key }" v-for="theme,key in themes" @click="updateSelected($event.currentTarget as Element);settingsStore.theme = key" v-once>
+                <svg width="250" height="250" viewBox="100 50 50 180">
                     <component :is="importer('themes', theme.theme)" />
                 </svg>
             </div>
