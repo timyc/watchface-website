@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { defineAsyncComponent, ref } from 'vue';
 import { useSettingsStore } from '@/stores/settings';
+import { importer } from '@/helpers/common';
 import themes from '@/data/themes';
 const settingsStore = useSettingsStore();
-const importer = (type: string, file: string) => defineAsyncComponent(() => import(`@/components/${type}/${file}.vue`));
 const updateSelected = (e: Element) => {
     // remove all other selected classes
     const selected = document.querySelectorAll('.selected');

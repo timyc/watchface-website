@@ -47,7 +47,7 @@ export default {
             </draggable>
         </div>
     </div>
-    <footer class="d-flex center">
+    <footer class="d-flex center" style="margin-top: 10px">
         <ContinueButton :step="2" />
     </footer>
 </template>
