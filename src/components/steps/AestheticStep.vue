@@ -25,6 +25,10 @@ export default {
             <span class="d-cell left" style="margin-right:auto;vertical-align:middle">Default</span>
             <span class="d-cell right" style="margin-left:auto"><span class="colorPreview" v-for="color in themes[settingsStore.theme as keyof typeof themes].default" :style="{'background-color': color}"></span></span>
         </div>-->
+        <template v-if="themes[settingsStore.theme as keyof typeof themes].cc">
+            <SelectedColorItem :defaultColor="settingsStore.primaryColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[0]) : settingsStore.primaryColor" name="Primary Color" @color-update="(val: string) => settingsStore.primaryColor = val" />
+            <SelectedColorItem :defaultColor="settingsStore.secondaryColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[1]) : settingsStore.secondaryColor" name="Secondary Color" @color-update="(val: string) => settingsStore.secondaryColor = val" />
+        </template>
         <SelectedColorItem :defaultColor="settingsStore.iconColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.iconColor" name="Icon Color" @color-update="(val: string) => settingsStore.iconColor = val" />
         <SelectedColorItem :defaultColor="settingsStore.iconTextColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.iconTextColor" name="Icon Text Color" @color-update="(val: string) => settingsStore.iconTextColor = val" />
         <SelectedColorItem :defaultColor="settingsStore.dateColor == null ? (settingsStore.theme == null ? 'white' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.dateColor" name="Date Color" @color-update="(val: string) => settingsStore.dateColor = val" />

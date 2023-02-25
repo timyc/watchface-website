@@ -9,8 +9,8 @@ const settingsStore = useSettingsStore();
         xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
             <radialGradient id="rgrad">
-                <stop offset="5%" :stop-color="settingsStore.aesthetic == null ? '#2CB574' : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[0]" />
-                <stop offset="95%" :stop-color="settingsStore.aesthetic == null ? 'black' : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[1]" />
+                <stop offset="5%" :stop-color="settingsStore.primaryColor == null ? '#2CB574' : settingsStore.primaryColor" />
+                <stop offset="95%" :stop-color="settingsStore.secondaryColor == null ? 'black' : settingsStore.secondaryColor" />
             </radialGradient>
         </defs>
         <rect width="100%" height="100%" rx="1" fill="url('#rgrad')" />
