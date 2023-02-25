@@ -8,6 +8,10 @@ export default {
     },
     emits: ['colorUpdate'],
     props: {
+        defaultColor: {
+            type: String,
+            required: true,
+        },
         name: {
             type: String,
             required: true,
@@ -39,7 +43,7 @@ export default {
         <span class="d-cell right handle"><img src="/icons/draggable.png" width="20" /></span>
     </div>
     <div class="colorInfo" v-if="visible">
-        <ColorPicker class="m-auto" :visible-formats="['hex']" alpha-channel="hide" @color-change="colorChange" />
+        <ColorPicker :color="defaultColor" class="m-auto" :visible-formats="['hex']" alpha-channel="hide" @color-change="colorChange" />
     </div>
 </template>
 

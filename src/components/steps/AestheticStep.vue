@@ -25,10 +25,10 @@ export default {
             <span class="d-cell left" style="margin-right:auto;vertical-align:middle">Default</span>
             <span class="d-cell right" style="margin-left:auto"><span class="colorPreview" v-for="color in themes[settingsStore.theme as keyof typeof themes].default" :style="{'background-color': color}"></span></span>
         </div>-->
-        <SelectedColorItem name="Icon Color" @color-update="(val: string) => settingsStore.iconColor = val" />
-        <SelectedColorItem name="Icon Text Color" @color-update="(val: string) => settingsStore.iconTextColor = val" />
-        <SelectedColorItem name="Date Color" @color-update="(val: string) => settingsStore.dateColor = val" />
-        <SelectedColorItem name="Time Color" @color-update="(val: string) => settingsStore.timeColor = val" />
+        <SelectedColorItem :defaultColor="settingsStore.iconColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.iconColor" name="Icon Color" @color-update="(val: string) => settingsStore.iconColor = val" />
+        <SelectedColorItem :defaultColor="settingsStore.iconTextColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.iconTextColor" name="Icon Text Color" @color-update="(val: string) => settingsStore.iconTextColor = val" />
+        <SelectedColorItem :defaultColor="settingsStore.dateColor == null ? (settingsStore.theme == null ? 'white' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.dateColor" name="Date Color" @color-update="(val: string) => settingsStore.dateColor = val" />
+        <SelectedColorItem :defaultColor="settingsStore.timeColor == null ? (settingsStore.theme == null ? 'white' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.timeColor" name="Time Color" @color-update="(val: string) => settingsStore.timeColor = val" />
     </div>
     <div v-else>
         <h2>Choose a theme first</h2>
