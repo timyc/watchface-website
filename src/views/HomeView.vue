@@ -10,7 +10,7 @@ const menuOpen = ref(false);
 </script>
 
 <template>
-  <div :class="{'blur': menuOpen}" style="height:400px;position:sticky;top:0;background:white">
+  <div :class="{'blur': menuOpen}" style="height:400px;position:sticky;top:0;background:white;z-index:500;">
     <nav style="margin:10px">
       <div id="menu-button" class="right d-table" @click="menuOpen = true"><img class="d-cell" src="/icons/menu.png" width="20" /><span
           class="d-cell" style="vertical-align: middle">Menu</span></div>
@@ -60,7 +60,7 @@ const menuOpen = ref(false);
     <AestheticStep v-if="settingsStore.step == 8" />
     <ExportStep v-if="settingsStore.step == 9" />
   </div>
-  <div class="d-abs w-100" v-if="menuOpen" style="top:0;">
+  <div class="d-abs w-100" v-if="menuOpen" style="top:0;z-index:600">
     <div id="menu" class="d-table">
       <img class="d-cell clickable" src="/icons/close.png" width="20" style="margin-left: auto" @click="menuOpen = false" />
       <div class="d-table w-100p">

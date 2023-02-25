@@ -36,6 +36,7 @@ declare module '@vue/runtime-core' {
     Roses: typeof import('./src/components/themes/Roses.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SelectedColorItem: typeof import('./src/components/items/SelectedColorItem.vue')['default']
     SelectedStatItem: typeof import('./src/components/items/SelectedStatItem.vue')['default']
     SoloLayout: typeof import('./src/components/layouts/SoloLayout.vue')['default']
     Spacenaut: typeof import('./src/components/themes/Spacenaut.vue')['default']

@@ -44,9 +44,9 @@ export default {
 
 <template>
     <svg width="0.4" height="0.4" :x="coords.x1" :y="coords.y1" viewBox="0 0 22 12" >
-        <image width="100%" height="100%" :href="'/icons/' + (stat == null ? 'question' : statistics[stat.stat as keyof typeof statistics].icon) + '.svg'" :style="{'filter': hexToCSSFilter(settingsStore.aesthetic == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]).filter.slice(0, -1)}" />
+        <image width="100%" height="100%" :href="'/icons/' + (stat == null ? 'question' : statistics[stat.stat as keyof typeof statistics].icon) + '.svg'" :style="{'filter': hexToCSSFilter(settingsStore.iconColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.iconColor).filter.slice(0, -1)}" />
     </svg>
-    <text :x="coords.x2" :y="coords.y2" dominant-baseline="middle" :text-anchor="parseInt(coords.x1) > 80 ? 'end' : 'start'" :fill="settingsStore.aesthetic == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].theme[2]" :font-size="size">
+    <text :x="coords.x2" :y="coords.y2" dominant-baseline="middle" :text-anchor="parseInt(coords.x1) > 80 ? 'end' : 'start'" :fill="settingsStore.iconTextColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.iconTextColor" :font-size="size">
     {{ //@ts-ignore 
         stat == null ? 'Stat' : statistics[stat.stat as keyof typeof statistics].display_methods[stat.mode].text }}
     </text>

@@ -115,3 +115,7 @@ footer {
 .v-middle {
     vertical-align: middle;
 }
+
+.m-auto {
+    margin: auto;
+}

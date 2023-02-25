@@ -1,13 +1,14 @@
 <script lang="ts">
 import { useSettingsStore } from '@/stores/settings';
+import { ColorPicker } from 'vue-accessible-color-picker';
 export default {
-    name: 'SelectedStatItem',
+    name: 'SelectedColorItem',
+    components: {
+        ColorPicker
+    },
+    emits: ['colorUpdate'],
     props: {
-        statInfo: {
-            type: Object as any,
-            required: true,
-        },
-        stat: {
+        name: {
             type: String,
             required: true,
         },
@@ -24,35 +25,32 @@ export default {
         };
     },
     methods: {
-        removeStat() {
-            this.settingsStore.fields = this.settingsStore.fields.filter(e => e.stat != this.stat);
-        }
+        colorChange(colorData: any) {
+            this.$emit('colorUpdate', colorData.cssColor);
+        },
     }
 }
 </script>
 
 <template>
-    <div :class="{'selectedStat': true, 'd-table': true, 'flatBottom': visible}" @click="visible = !visible">
+    <div :class="{'selectedColor': true, 'd-table': true, 'flatBottom': visible}" @click="visible = !visible">
         <span class="d-cell left v-middle" style="width:30px;pointer-events:none"><img src="/icons/expandable.png" width="20" /></span>
-        <span class="d-cell left v-middle">{{ statInfo.name }}</span>
+        <span class="d-cell left v-middle">{{ name }}</span>
         <span class="d-cell right handle"><img src="/icons/draggable.png" width="20" /></span>
     </div>
-    <div class="statInfo" v-if="visible">
-        <select v-model="settingsStore.fields.filter(e => e.stat == stat)[0].mode">
-            <option v-for="method,key of statInfo.display_methods" :value="key">{{ method.name }}</option>
-        </select>
-        <div class="red clickable" @click="removeStat()" style="margin: 20px">[Remove]</div>
+    <div class="colorInfo" v-if="visible">
+        <ColorPicker class="m-auto" :visible-formats="['hex']" alpha-channel="hide" @color-change="colorChange" />
     </div>
 </template>
 
 <style scoped>
-.statInfo {
+.colorInfo {
     width: 80vw;
     padding: 10px;
     background-color: #878787b6;
     margin: -20px auto 10px auto;
 }
-.selectedStat {
+.selectedColor {
     width: 80vw;
     padding: 10px;
     background-color: #D9D9D9;
