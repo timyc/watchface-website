@@ -55,11 +55,4 @@ export default {
 .selectedChoice {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.colorPreview {
-    display: inline-block;
-    width: 20px;
-    border: 1px solid black;
-    height: 20px;
-    margin: 0 5px;
-}
 </style>

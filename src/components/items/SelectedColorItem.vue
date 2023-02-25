@@ -40,7 +40,7 @@ export default {
     <div :class="{'selectedColor': true, 'd-table': true, 'flatBottom': visible}" @click="visible = !visible">
         <span class="d-cell left v-middle" style="width:30px;pointer-events:none"><img src="/icons/expandable.png" width="20" /></span>
         <span class="d-cell left v-middle">{{ name }}</span>
-        <span class="d-cell right handle"><img src="/icons/draggable.png" width="20" /></span>
+        <span class="d-cell right"><span class="colorPreview" :style="{'background-color': defaultColor}"></span></span>
     </div>
     <div class="colorInfo" v-if="visible">
         <ColorPicker :color="defaultColor" class="m-auto" :visible-formats="['hex']" alpha-channel="hide" @color-change="colorChange" />
@@ -62,8 +62,12 @@ export default {
     margin: 20px auto;
     cursor: pointer;
 }
-.handle {
-    cursor: move;
+.colorPreview {
+    display: inline-block;
+    width: 20px;
+    border: 1px solid black;
+    height: 20px;
+    margin: 0 5px;
 }
 .flatBottom {
     border-bottom-left-radius: 0;
