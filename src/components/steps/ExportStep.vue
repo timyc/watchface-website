@@ -10,6 +10,7 @@ import aesthetics from '@/data/aesthetics';
 import themes from '@/data/themes';
 const settingsStore = useSettingsStore();
 const done = ref('');
+const canGenerate = ref(true);
 async function zip() {
     JSZipUtils.getBinaryContent('full.zip', function (err: any, data: any) {
         if (err) {
@@ -107,6 +108,8 @@ async function zip() {
     });
 }
 async function genCode() {
+    if (!canGenerate.value) return;
+    canGenerate.value = false;
     let code = uuidv4();
     await fetch(`${import.meta.env.VITE_API_POST}`, {
         method: 'POST',
@@ -123,6 +126,7 @@ async function genCode() {
         } else {
             alert("Something went wrong. Please try again later.");
         }
+        canGenerate.value = true;
     });
 }
 </script>
@@ -130,7 +134,7 @@ async function genCode() {
 <template>
     <div v-if="settingsStore.theme != null && settingsStore.layout != null">
         <h2>Export your customized watch face</h2>
-        <div id="exportBtn" class="clickable" @click="genCode">Export Style</div>
+        <div id="exportBtn" :class="{'clickable': canGenerate, 'noclick': !canGenerate}" @click="genCode">Export Style</div>
         <h3>Export Code</h3>
         <textarea v-html="done"></textarea>
         <!--<h3>Debug Output</h3>
@@ -154,5 +158,8 @@ async function genCode() {
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
+}
+.noclick {
+    cursor: not-allowed;
 }
 </style>
