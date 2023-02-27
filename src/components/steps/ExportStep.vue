@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useSettingsStore } from '@/stores/settings';
 import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
+import { v4 as uuidv4 } from 'uuid';
 import layouts from '@/data/layouts';
 import aesthetics from '@/data/aesthetics';
 import themes from '@/data/themes';
 const settingsStore = useSettingsStore();
+const done = ref('');
 async function zip() {
     JSZipUtils.getBinaryContent('full.zip', function (err: any, data: any) {
         if (err) {
@@ -103,12 +106,33 @@ async function zip() {
         });
     });
 }
+async function genCode() {
+    let code = uuidv4();
+    await fetch(`${import.meta.env.VITE_API_POST}`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            k: code,
+            v: settingsStore.getExport()
+        }),
+    }).then((response) => {
+        if (response.status == 200) {
+            done.value = code;
+        } else {
+            alert("Something went wrong. Please try again later.");
+        }
+    });
+}
 </script>
 
 <template>
     <div v-if="settingsStore.theme != null && settingsStore.layout != null">
         <h2>Export your customized watch face</h2>
-        <div id="exportBtn" class="clickable" @click="zip">Export Style</div>
+        <div id="exportBtn" class="clickable" @click="genCode">Export Style</div>
+        <h3>Export Code</h3>
+        <textarea v-html="done"></textarea>
         <!--<h3>Debug Output</h3>
         <textarea v-html="settingsStore.getExport()" style="width: 70vw;height:200px"></textarea>-->
     </div>
