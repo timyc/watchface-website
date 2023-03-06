@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useSettingsStore } from '@/stores/settings';
 import { importer } from '@/helpers/common';
 import themes from '@/data/themes';
@@ -10,32 +11,43 @@ const updateSelected = (e: Element) => {
         el.classList.remove('selected');
     });
     e.classList.add('selected');
+    if (themes[settingsStore.theme as keyof typeof themes].extra.length > 0) {
+        modalOpen.value = true;
+    }
 }
+const modalOpen = ref(false);
 </script>
 
 <template>
     <div>
         <h2>Choose a theme</h2>
         <div id="themesContainer">
-            <div :class="{ 'selected': settingsStore.theme == key }" v-for="theme,key in themes" @click="updateSelected($event.currentTarget as Element);settingsStore.theme = key" v-once>
+            <div :class="{ 'selected': settingsStore.theme == key }" v-for="theme, key in themes"
+                @click="settingsStore.theme = key; updateSelected($event.currentTarget as Element)" v-once>
                 <svg width="250" height="250" viewBox="100 50 50 180">
                     <component :is="importer('themes', theme.theme)" />
                 </svg>
             </div>
         </div>
-        <template v-if="settingsStore.theme != null">
-            <div v-if="themes[settingsStore.theme as keyof typeof themes].extra.length > 0">
-                <div class="notice">
-                    <h3>Attention</h3>
-                    <p>The theme you chose requires additional configurations. Please complete them below.</p>
+        <template v-if="settingsStore.theme != null && modalOpen == true">
+            <div class="modal" v-if="themes[settingsStore.theme as keyof typeof themes].extra.length > 0">
+                <div class="modal-content">
+                    <span class="close" @click="modalOpen = false">&times;</span>
+                    <div class="notice">
+                        <h3>Attention</h3>
+                        <p>The theme you chose requires additional configurations. Please complete them below.</p>
+                    </div>
+                    <component v-for="extra in themes[settingsStore.theme as keyof typeof themes].extra"
+                        :is="importer('extras', extra)" @complete="settingsStore.extraStep++" />
                 </div>
-                <component v-for="extra in themes[settingsStore.theme as keyof typeof themes].extra"
-                    :is="importer('extras', extra)" @complete="settingsStore.extraStep++" />
+
             </div>
         </template>
     </div>
     <footer class="d-flex center">
-        <ContinueButton v-if="settingsStore.theme != null && settingsStore.extraStep >= themes[settingsStore.theme as keyof typeof themes].extra.length" :step="2" />
+        <ContinueButton
+            v-if="settingsStore.theme != null && settingsStore.extraStep >= themes[settingsStore.theme as keyof typeof themes].extra.length"
+            :step="2" />
     </footer>
 </template>
 
@@ -54,5 +66,37 @@ const updateSelected = (e: Element) => {
 
 #themesContainer>div:last-child {
     margin-right: auto;
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 </style>
