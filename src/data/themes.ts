@@ -21,13 +21,6 @@ export default {
         default: ["darkred", "red", "#FFFFFF"],
         extra: ['AmongUsCustom']
     },
-    "custom": {
-        theme: "CustomImage",
-        name: "Custom Image",
-        cc: false,
-        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
-        extra: ['ImageUpload'],
-    },
     "rainbow": {
         theme: "Rainbow",
         name: "Rainbow",
@@ -69,5 +62,12 @@ export default {
         cc: false,
         default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
         extra: [],
-    }
+    },
+    "custom": {
+        theme: "CustomImage",
+        name: "Custom Image",
+        cc: false,
+        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
+        extra: ['ImageUpload'],
+    },
 }

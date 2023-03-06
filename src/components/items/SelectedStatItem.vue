@@ -41,7 +41,7 @@ export default {
         <select v-model="settingsStore.fields.filter(e => e.stat == stat)[0].mode">
             <option v-for="method,key of statInfo.display_methods" :value="key">{{ method.name }}</option>
         </select>
-        <div class="red clickable" @click="removeStat()" style="margin: 20px">[Remove]</div>
+        <div class="removeBtn clickable" @click="removeStat()" style="margin: 20px auto">Remove</div>
     </div>
 </template>
 
@@ -66,5 +66,14 @@ export default {
 .flatBottom {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+.removeBtn {
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
 }
 </style>
