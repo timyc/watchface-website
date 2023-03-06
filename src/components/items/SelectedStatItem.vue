@@ -33,7 +33,7 @@ export default {
 
 <template>
     <div :class="{'selectedStat': true, 'd-table': true, 'flatBottom': visible}" @click="visible = !visible">
-        <span class="d-cell left v-middle" style="width:30px;pointer-events:none"><img src="/icons/expandable.png" width="20" /></span>
+        <span class="d-cell left v-middle" style="width:30px;pointer-events:none"><span :class="{'arrow-up': visible, 'arrow-down': !visible}"></span></span>
         <span class="d-cell left v-middle">{{ statInfo.name }}</span>
         <span class="d-cell right handle"><img src="/icons/draggable.png" width="20" /></span>
     </div>
@@ -75,5 +75,11 @@ export default {
     cursor: pointer;
     background-color: red;
     color: white;
+}
+.arrow-up:after {
+    content: '▲';
+}
+.arrow-down:after {
+    content: '▼';
 }
 </style>
