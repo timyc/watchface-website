@@ -26,6 +26,9 @@ const modalOpen = ref(false);
                 @click="settingsStore.theme = key; updateSelected($event.currentTarget as Element)" v-once>
                 <svg width="250" height="250" viewBox="100 50 50 180">
                     <component :is="importer('themes', theme.theme)" />
+                    <template v-if="theme.icon != ''">
+                        <image :href="`icons/${theme.icon}`" x="40" y="165" width="50%" height="50%" style="filter: drop-shadow(0px 0px 1px white);" />
+                    </template>
                 </svg>
             </div>
         </div>
@@ -33,10 +36,7 @@ const modalOpen = ref(false);
             <div class="modal" v-if="themes[settingsStore.theme as keyof typeof themes].extra.length > 0">
                 <div class="modal-content">
                     <span class="close" @click="modalOpen = false">&times;</span>
-                    <div class="notice">
-                        <h3>Attention</h3>
-                        <p>The theme you chose requires additional configurations. Please complete them below.</p>
-                    </div>
+                    <br />
                     <component v-for="extra in themes[settingsStore.theme as keyof typeof themes].extra"
                         :is="importer('extras', extra)" @complete="settingsStore.extraStep++" />
                 </div>
