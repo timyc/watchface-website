@@ -25,10 +25,10 @@ export default {
                 name: "Today",
                 text: "70"
             },
-            "percent": {
+            /*"percent": {
                 name: "Goal (Percentage)",
                 text: "72%"
-            },
+            },*/
         },
     },
     /*"spo2": {
@@ -83,7 +83,7 @@ export default {
     },
     "distance": {
         name: "Distance",
-        icon: "footprint",
+        icon: "distance",
         display_methods: {
             "today": {
                 name: "Today",
@@ -100,7 +100,7 @@ export default {
         },
     },
     "azm": {
-        name: "Active Zone",
+        name: "Active Zone Minutes",
         icon: "floor",
         display_methods: {
             "today": {

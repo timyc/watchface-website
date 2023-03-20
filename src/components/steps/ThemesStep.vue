@@ -27,7 +27,8 @@ const modalOpen = ref(false);
                 <svg width="250" height="250" viewBox="100 50 50 180">
                     <component :is="importer('themes', theme.theme)" />
                     <template v-if="theme.icon != ''">
-                        <image :href="`icons/${theme.icon}`" x="40" y="165" width="50%" height="50%" style="filter: drop-shadow(0px 0px 1px white);" />
+                        <rect x="110" y="132" rx="5" ry="5" width="70%" height="20%" style="fill: gray;" />
+                        <image :href="`icons/${theme.icon}`" x="115" y="105" width="50%" height="50%" />
                     </template>
                 </svg>
             </div>

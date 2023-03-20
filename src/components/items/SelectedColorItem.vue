@@ -38,7 +38,7 @@ export default {
 
 <template>
     <div :class="{'selectedColor': true, 'd-table': true, 'flatBottom': visible}" @click="visible = !visible">
-        <span class="d-cell left v-middle" style="width:30px;pointer-events:none"><img src="/icons/expandable.png" width="20" /></span>
+        <span class="d-cell left v-middle" style="width:30px;pointer-events:none"><span :class="{'arrow-up': visible, 'arrow-down': !visible}"></span></span>
         <span class="d-cell left v-middle">{{ name }}</span>
         <span class="d-cell right"><span class="colorPreview" :style="{'background-color': defaultColor}"></span></span>
     </div>

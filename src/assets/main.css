@@ -119,3 +119,10 @@ footer {
 .m-auto {
     margin: auto;
 }
+
+.arrow-up:after {
+    content: '▲';
+}
+.arrow-down:after {
+    content: '▼';
+}
