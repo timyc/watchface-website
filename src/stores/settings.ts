@@ -32,6 +32,12 @@ export const useSettingsStore = defineStore("settingsStore", {
                 theme: this.theme,
                 aesthetic: this.aesthetic ?? 'default',
                 fields: this.fields,
+                primaryColor: this.primaryColor,
+                secondaryColor: this.secondaryColor,
+                iconColor: this.iconColor,
+                iconTextColor: this.iconTextColor,
+                dateColor: this.dateColor,
+                timeColor: this.timeColor,
                 extras: {bandaid: this.bandaid, customImage: this.customImage},
             });
         }
