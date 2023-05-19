@@ -101,7 +101,7 @@ export default {
 	},
 	azm: {
 		name: "Active Zone Minutes",
-		icon: "floor",
+		icon: "active_zone_minutes",
 		display_methods: {
 			today: {
 				name: "Today",
@@ -129,7 +129,7 @@ export default {
 	},
 	flr: {
 		name: "Floors",
-		icon: "footprint",
+		icon: "floors",
 		display_methods: {
 			today: {
 				name: "Floors Today",

@@ -1,27 +1,50 @@
+<!-- 
+  This is the Main Page of the web application, the HTML, CSS, and overall organization of the web app is located in this file.
+-->
+
 <script setup lang="ts">
-import { defineAsyncComponent, ref } from 'vue';
-import { importer } from '@/helpers/common';
-import { useSettingsStore } from '@/stores/settings';
-import aesthetics from '@/data/aesthetics';
-import layouts from '@/data/layouts';
-import themes from '@/data/themes';
+import { defineAsyncComponent, ref } from "vue";
+// Helper Functions
+import { importer } from "@/helpers/common";
+
+// Settings Store
+import { useSettingsStore } from "@/stores/settings";
+
+// Data
+import aesthetics from "@/data/aesthetics";
+import layouts from "@/data/layouts";
+import themes from "@/data/themes";
 const settingsStore = useSettingsStore();
 const menuOpen = ref(false);
 </script>
 
 <template>
-  <div :class="{'blur': menuOpen}" style="height:400px;position:sticky;top:0;background:white;z-index:500;">
-    <nav style="padding:10px">
-      <div id="menu-button" class="right d-table" @click="menuOpen = true"><img class="d-cell" src="/icons/menu.png" width="20" /><span
-          class="d-cell" style="vertical-align: middle">Menu</span></div>
+  <div :class="{ blur: menuOpen }" style="
+			height: 400px;
+			position: sticky;
+			top: 0;
+  			background: white;
+  			z-index: 500;
+  		">
+    <!-- Nav Bar -->
+    <nav style="padding: 10px">
+      <div id="menu-button" class="right d-table" @click="menuOpen = true">
+        <img class="d-cell" src="/icons/menu.png" width="20" />
+        <span class="d-cell" style="vertical-align: middle">Menu</span>
+      </div>
     </nav>
-    <!-- Fitbit outer svg -->
+    <!-- The Black Border of the Fitbit Preview -->
     <div class="center d-abs d-flex" style="margin-left: auto; margin-right: auto; right: 0; left: 0">
       <svg width="250" height="250">
         <rect width="100%" height="100%" rx="50" ry="50" stroke="black" stroke-width="30" fill-opacity="0" />
       </svg>
     </div>
-    <!-- Whatever is inside the Fitbit should be added below -->
+    <!-- 
+      Actual Contents of the Fitbit Preview
+      - The contents of the fitbit preview are rendered as SVGs
+      - The layout settings are stored in a file in data/layout.ts
+      - the layouts are then rendered here somehow with an importer function
+    -->
     <div class="center d-flex"
       :style="{ 'font-family': settingsStore.aesthetic == null ? 'inherit' : `${aesthetics[settingsStore.aesthetic as keyof typeof aesthetics].layout[0]}` }">
       <component
@@ -33,24 +56,7 @@ const menuOpen = ref(false);
   </div>
 
   <!-- Last row for option choosing -->
-  <div :class="{'blur': menuOpen}" class="center d-flex" style="flex-direction:column">
-    <!--<div class="stepsContainer clickable">
-      <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 3}" @click="settingsStore.step = 3">
-        <div>Layout</div>
-      </li>
-      <hr />
-      <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 4}" @click="settingsStore.step = 4">
-        <div>Data</div>
-      </li>
-      <hr />
-      <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 6}" @click="settingsStore.step = 6">
-        <div>Theme</div>
-      </li>
-      <hr />
-      <li :class="{'stepsItem': true, 'youAreHere': settingsStore.step == 8}" @click="settingsStore.step = 8">
-        <div>Aesthetic</div>
-      </li>
-    </div>-->
+  <div :class="{ blur: menuOpen }" class="center d-flex" style="flex-direction: column">
     <CheckpointStep :num="1" text="Customize your data" v-if="settingsStore.step == 2" />
     <LayoutStep v-if="settingsStore.step == 3" />
     <StatisticsStep v-if="settingsStore.step == 4" />
@@ -60,26 +66,60 @@ const menuOpen = ref(false);
     <AestheticStep v-if="settingsStore.step == 8" />
     <ExportStep v-if="settingsStore.step == 9" />
   </div>
-  <div class="d-abs w-100" v-if="menuOpen" style="top:0;z-index:600;position:fixed">
+  <div class="d-abs w-100" v-if="menuOpen" style="top: 0; z-index: 600; position: fixed">
     <div id="menu" class="d-table">
-      <img class="d-cell clickable" src="/icons/close.png" width="20" style="margin-left: auto" @click="menuOpen = false" />
+      <img class="d-cell clickable" src="/icons/close.png" width="20" style="margin-left: auto"
+        @click="menuOpen = false" />
       <div class="d-table w-100p">
-        <div class="menuOption clickable" @click="settingsStore.step = 3;menuOpen = false">Layout</div>
-        <div class="d-cell right" v-if="settingsStore.layout != null"><img src="/icons/checkmark.png" width="20" /></div>
+        <div class="menuOption clickable" @click="
+          settingsStore.step = 3;
+        menuOpen = false;
+          					">
+          Layout
+        </div>
+        <div class="d-cell right" v-if="settingsStore.layout != null">
+          <img src="/icons/checkmark.png" width="20" />
+        </div>
       </div>
       <div class="d-table w-100p">
-        <div class="menuOption clickable d-cell" @click="settingsStore.step = 4;menuOpen = false">Data</div>
-        <div class="d-cell right" v-if="settingsStore.fields.length > 0"><img src="/icons/checkmark.png" width="20" /></div>
+        <div class="menuOption clickable d-cell" @click="
+          settingsStore.step = 4;
+        menuOpen = false;
+          					">
+          Data
+        </div>
+        <div class="d-cell right" v-if="settingsStore.fields.length > 0">
+          <img src="/icons/checkmark.png" width="20" />
+        </div>
       </div>
       <div class="d-table w-100p">
-        <div class="menuOption clickable" @click="settingsStore.step = 6;menuOpen = false">Theme</div>
-        <div class="d-cell right" v-if="settingsStore.theme != null"><img src="/icons/checkmark.png" width="20" /></div>
+        <div class="menuOption clickable" @click="
+          settingsStore.step = 6;
+        menuOpen = false;
+          					">
+          Theme
+        </div>
+        <div class="d-cell right" v-if="settingsStore.theme != null">
+          <img src="/icons/checkmark.png" width="20" />
+        </div>
       </div>
       <div class="d-table w-100p">
-        <div class="menuOption clickable" @click="settingsStore.step = 8;menuOpen = false">Aesthetic</div>
-        <div class="d-cell right" v-if="settingsStore.aestheticFlag == true"><img src="/icons/checkmark.png" width="20" /></div>
+        <div class="menuOption clickable" @click="
+          settingsStore.step = 8;
+        menuOpen = false;
+          					">
+          Aesthetic
+        </div>
+        <div class="d-cell right" v-if="settingsStore.aestheticFlag == true">
+          <img src="/icons/checkmark.png" width="20" />
+        </div>
       </div>
-      <div class="menuOption clickable green" @click="settingsStore.step = 9;menuOpen = false">Export</div>
+      <div class="menuOption clickable green" @click="
+        settingsStore.step = 9;
+      menuOpen = false;
+        				">
+        Export
+      </div>
     </div>
   </div>
 </template>
@@ -87,30 +127,35 @@ const menuOpen = ref(false);
 <style scoped>
 #menu-button {
   padding: 10px;
-  background: #D9D9D9;
+  background: #d9d9d9;
   width: 70px;
   margin-left: auto;
   border-radius: 10px;
   cursor: pointer;
 }
+
 #menu {
-  background: #D9D9D9;
-  padding:20px;
-  margin-left:auto;
-  width:200px;
-  height:200px;
+  background: #d9d9d9;
+  padding: 20px;
+  margin-left: auto;
+  width: 200px;
+  height: 200px;
 }
+
 .menuOption {
   padding: 10px;
 }
+
 .blur {
   filter: blur(5px);
 }
+
 .stepsContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 }
+
 .stepsItem {
   display: flex;
   flex-direction: column;
@@ -121,7 +166,8 @@ const menuOpen = ref(false);
 .stepsItem:hover {
   background: #ebeaea;
 }
+
 .youAreHere {
-  background: #D9D9D9;
+  background: #d9d9d9;
 }
 </style>
