@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         addStatistic(stat: string, mode: string) {
-            this.settingsStore.fields.push({stat: stat, mode: mode});
+            this.settingsStore.fields.push({ stat: stat, mode: mode });
         }
     },
 }
@@ -27,21 +27,21 @@ export default {
     <div>
         <div id="statisticsContainer">
             <h2>Please select the data points you would like to have</h2>
-            <div id="statisticsBox" v-if="settingsStore.fields.length < (settingsStore.layout != null ? layouts[settingsStore.layout as keyof typeof layouts].statCount : 0)">
+            <div id="statisticsBox"
+                v-if="settingsStore.fields.length < (settingsStore.layout != null ? layouts[settingsStore.layout as keyof typeof layouts].statCount : 0)">
                 <div id="statisticsSelector">Add statistic</div>
                 <div id="statisticsChoices">
-                    <template v-for="value,index in statistics" :key="value.name">
-                        <div v-if="!settingsStore.fields.find(e => e.stat == index)" @click="addStatistic(index, Object.keys(value.display_methods)[0])">{{ value.name }}</div>
+                    <template v-for="value, index in statistics" :key="value.name">
+                        <div v-if="!settingsStore.fields.find(e => e.stat == index)"
+                            @click="addStatistic(index, Object.keys(value.display_methods)[0])">{{ value.name }}</div>
                     </template>
                 </div>
             </div>
-            <draggable 
-            v-model="settingsStore.fields" 
-            item-key="stat"
-            handle=".handle">
-                <template #item="{element}">
+            <draggable v-model="settingsStore.fields" item-key="stat" handle=".handle">
+                <template #item="{ element }">
                     <div>
-                        <SelectedStatItem :stat="element.stat" :statInfo="statistics[element.stat as keyof typeof statistics]" />
+                        <SelectedStatItem :stat="element.stat"
+                            :statInfo="statistics[element.stat as keyof typeof statistics]" />
                     </div>
                 </template>
             </draggable>
@@ -77,14 +77,14 @@ export default {
     background-color: white;
 }
 
-#statisticsChoices > div {
+#statisticsChoices>div {
     border: 1px solid black;
     padding: 5px;
     cursor: pointer;
 }
 
 #statisticsBox {
-    z-index:100;
+    z-index: 100;
 }
 
 #statisticsBox:hover #statisticsChoices {
