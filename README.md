@@ -12,12 +12,17 @@
 2. ✅ Ensure each stat has a distinct icon. For example, steps and floor count have the same icon
 3. ✅ Change 'Floor Count' stat to 'Floors'
 4. ☐ Change the popout nav bar to an anchored nav bar that stays at the top of the page and echos the position in the customization process the user is located in
+    1. ✅ Navbar now is displayed at top of screen
+    2. ✅ Navbar shows when a step is complete
+    3. ☐ Navbar shows the current step
 
 # Archived/Finished Tasks
 
 # Bugs
 
-Certain font names that include numbers (Press Start 2P) do not work for some reason while others (VT323) do.
+1. Certain font names that include numbers (Press Start 2P) do not work for some reason while others (VT323) do.
+
+2. The data step of the navbar will show as incomplete when the user selects a no data layout
 
 # Notes
 
