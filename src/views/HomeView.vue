@@ -114,7 +114,7 @@ const menuOpen = ref(false);
   /* 2. [Fitbit Preview Container] */
   .fitbit-preview-container{
     /* Margins */
-    /* margin-top: 1rem; */
+    margin-top: 1rem;
 
     /* Positioning */
     position: sticky;
