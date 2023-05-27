@@ -1,7 +1,6 @@
 <!-- 
   This is the Main Page of the web application, the HTML, CSS, and overall organization of the web app is located in this file.
 -->
-
 <script setup lang="ts">
 import { defineAsyncComponent, ref } from "vue";
 // Helper Functions
@@ -22,7 +21,7 @@ const menuOpen = ref(false);
 </script>
 
 <template>
-  <!-- Navbar at Top of Screen -->
+  <!-- 1. [Navbar at Top of Screen] -->
   <nav class="nav-bar">
     <div class="menuOption clickable" :class="{completeMenuOption: settingsStore.layout != null}" @click="settingsStore.step = 3;">
       Layout
@@ -41,7 +40,8 @@ const menuOpen = ref(false);
     </div>
   </nav>
 
-  <div style="height: 400px;position: sticky;top: 0;background: white; z-index: 500;">
+  <!-- 2. [Fitbit Preview Container] -->
+  <div class="fitbit-preview-container">
     <!-- The Black Border of the Fitbit Preview -->
     <div class="center d-abs d-flex" style="margin-left: auto; margin-right: auto; right: 0; left: 0">
       <svg width="250" height="250">
@@ -65,10 +65,11 @@ const menuOpen = ref(false);
   </div>
 
   <!-- 
+    3. [Steps / Checkpoint Section]
     - This div essentially contains each "step" that is shown to users
     - This div only renders the currently selected step depending on settingsStore.step
   -->
-  <div :class="{ blur: menuOpen }" class="center d-flex" style="flex-direction: column">
+  <div :class="{ blur: menuOpen }" class="steps-container">
     <CheckpointStep :num="1" text="Customize your data" v-if="settingsStore.step == 2" />
     <LayoutStep v-if="settingsStore.step == 3" />
     <StatisticsStep v-if="settingsStore.step == 4" />
@@ -83,7 +84,7 @@ const menuOpen = ref(false);
 
 <!-- CSS -->
 <style scoped>
-  /* Navbar */
+  /* 1. [Navbar] */
   .nav-bar{
     /* Flex Box */
     display: flex;
@@ -100,7 +101,7 @@ const menuOpen = ref(false);
     /* border: 1px solid red; */
 
     /* Fonts / Font Size */
-    font-size: 1.8em;
+    font-size: 1.4em;
     padding: 10px;
   }
 
@@ -108,6 +109,31 @@ const menuOpen = ref(false);
     /* Fonts */
     color: white;
     background-color: black;
+  }
+
+  /* 2. [Fitbit Preview Container] */
+  .fitbit-preview-container{
+    /* Margins */
+    /* margin-top: 1rem; */
+
+    /* Positioning */
+    position: sticky;
+    top: 0;
+    z-index: 500;
+
+    /* Coloring */
+    background: white; 
+  }
+
+  /* 3. [Steps / Checkpoint Section] */
+  .steps-container{
+    /* Flex Box */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    /* Text Alignment */
+    text-align: center;
   }
 
 #menu-button {
