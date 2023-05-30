@@ -32,8 +32,17 @@ export default {
                 <div id="statisticsSelector">Add statistic</div>
                 <div id="statisticsChoices">
                     <template v-for="value, index in statistics" :key="value.name">
-                        <div v-if="!settingsStore.fields.find(e => e.stat == index)"
-                            @click="addStatistic(index, Object.keys(value.display_methods)[0])">{{ value.name }}</div>
+                        <div 
+                            class="statistic-item"
+                            v-if="!settingsStore.fields.find(e => e.stat == index)"
+                            @click="addStatistic(index, Object.keys(value.display_methods)[0])">
+                            {{ value.name }}
+                            <div class="tooltip">
+                                Fitbit devices use a 3-axis accelerometer to count your steps. 
+                                This sensor also allows your device to determine the frequency, duration, intensity, 
+                                and patterns of your movement.
+                            </div>
+                        </div>
                     </template>
                 </div>
             </div>
@@ -53,6 +62,45 @@ export default {
 </template>
 
 <style scoped>
+/* Tool Tip */
+.statistic-item {
+  /* position: relative; */
+}
+
+.tooltip{
+    /* Positoning */
+    position: absolute;
+    top: 0;
+    right: -6rem;
+
+    /* Sizing */
+    width: 6rem;
+
+    /* Display */
+    display: none;
+
+    /* Color */
+    background-color: #f9f9f9;
+    color: #000;
+
+    /* Padding */
+    padding: 0.5rem;
+
+    /* Border / Shadow */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.statistic-item:hover .tooltip {
+    /* On hover, display the tooltip */
+    display: block;
+}
+
+.statistic-item:hover {
+    /* On hover of an individual statistics item, change background color */
+    background-color: #D8D8D8;
+}
+
 #statistics {
     display: flex;
     gap: 10px;
