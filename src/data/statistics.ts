@@ -47,7 +47,7 @@ export default {
     },*/
 	stp: {
 		name: "Steps",
-		icon: "footprint",
+		icon: "steps",
 		display_methods: {
 			today: {
 				name: "Steps Today",
