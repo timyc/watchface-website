@@ -1,20 +1,19 @@
-# Current Tasks
-
-1. ☐ Replace all current icons with standard fitbit Icons / similar Icons
-    1. ✅ distance
-    2. ✅ floors
-    3. ☐ fire
-    4. ✅ heart
-    5. ☐ footprint
-    6. ☐ question
-    7. ☐ sleep
-    8. ☐ weather
-2. ✅ Ensure each stat has a distinct icon. For example, steps and floor count have the same icon
-3. ✅ Change 'Floor Count' stat to 'Floors'
-4. ☐ Change the popout nav bar to an anchored nav bar that stays at the top of the page and echos the position in the customization process the user is located in
-    1. ✅ Navbar now is displayed at top of screen
-    2. ✅ Navbar shows when a step is complete
-    3. ☐ Navbar shows the current step
+# [High Prio] Tasks
+1. [ ] Replace all current icons with standard fitbit Icons / similar Icons
+    1. [x] distance
+    2. [x] floors
+    3. [ ] fire
+    4. [x] heart
+    5. [ ] footprint
+    6. [ ] question
+    7. [ ] sleep
+    8. [ ] weather
+2. [x] Ensure each stat has a distinct icon. For example, steps and floor count have the same icon
+3. [x] Change 'Floor Count' stat to 'Floors'
+4. [ ] Change the popout nav bar to an anchored nav bar that stays at the top of the page and echos the position in the customization process the user is located in
+    1. [x] Navbar now is displayed at top of screen
+    2. [x] Navbar shows when a step is complete
+    3. [ ] Navbar shows the current step
 
 # Archived/Finished Tasks
 
