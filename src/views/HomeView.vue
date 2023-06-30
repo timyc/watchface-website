@@ -135,7 +135,7 @@ const menuOpen = ref(false);
 	/* Margins */
 	margin-left: 12rem;
 	margin-right: 12rem;
-	margin-top: 2rem;
+	margin-top: 1rem;
 }
 
 .menuOption {

@@ -1,6 +1,7 @@
 <script lang="ts">
 import { useSettingsStore } from '@/stores/settings';
 import statistics from '@/data/statistics';
+import tooltips from '@/data/tooltips';
 import layouts from '@/data/layouts';
 import draggable from 'vuedraggable';
 
@@ -12,7 +13,7 @@ export default {
     setup() {
         const settingsStore = useSettingsStore();
         return {
-            settingsStore, statistics, layouts
+            settingsStore, statistics, layouts, tooltips
         };
     },
     methods: {
@@ -38,9 +39,7 @@ export default {
                             @click="addStatistic(index, Object.keys(value.display_methods)[0])">
                             {{ value.name }}
                             <div class="tooltip">
-                                Fitbit devices use a 3-axis accelerometer to count your steps. 
-                                This sensor also allows your device to determine the frequency, duration, intensity, 
-                                and patterns of your movement.
+                                {{tooltips[index]}}
                             </div>
                         </div>
                     </template>
@@ -74,7 +73,7 @@ export default {
     right: -6rem;
 
     /* Sizing */
-    width: 6rem;
+    width: 7rem;
 
     /* Display */
     display: none;

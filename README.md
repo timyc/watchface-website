@@ -1,19 +1,5 @@
 ## Tasks
-**High Priority**
-
-- [ ] Icon Color Picker
-- [ ] Switch up nav bar to be floating and anchored on all pages
-- [ ] Activity percentage (goal)
-
-**Medium Priority**
-
-- [ ] Add Dialogue Boxes for individual statistics
-- [ ] Add dialogue Boxes for further customizations
-
-**Low Priority**
-
-- [ ] Add more Designs
-- [ ] Change last page to have some sort of confirmation
+- [ ] Fully implement popup for each measurement
 
 ## Finished Tasks
 
@@ -32,6 +18,17 @@
     - [x] sleep
 
 - [x] Active zone minutes icon is incorrect
+
+- [x] Adjust data types for various measurements
+    - [x] Heart Rate
+    - [x] Sleep
+    - [x] Weather
+    - [x] Food
+    - [x] Steps
+    - [x] Distance Travelled
+    - [x] AZM
+    - [x] Floors
+    - [x] Water Consumed
 
 ## Bugs
 
