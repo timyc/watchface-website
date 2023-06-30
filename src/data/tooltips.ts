@@ -5,7 +5,7 @@ export default {
     calories_burned : "Number of calories burned, in Calories (kcal)",
     water: "Amount of water consumed for the given period",
     floors : "Elevation gain, in number of floors climbed",
-    sleep : "a sum of your individual scores in sleep duration, sleep quality, and restoration, for a total score of up to 100. Most people get a score between 72 and 83. Sleep score ranges are: Excellent: 90-100. Good: 80-89",
+    sleep : "A sum of your individual scores in sleep duration, sleep quality, and restoration, for a total score of up to 100. Most people get a score between 72 and 83.",
     weather : "",
     hrm : "",
     calories_consumed : "Number of calories for the given time period"
