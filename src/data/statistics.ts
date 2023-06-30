@@ -3,17 +3,25 @@ export default {
 		name: "Sleep",
 		icon: "sleep",
 		display_methods: {
-			today: {
-				name: "Today",
+			hours_slept: {
+				name: "Hours Slept (0-24)",
+				text: "8 hours",
+			},
+			sleep_score: {
+				name: "Sleep Score (0-100)",
+				text: "85",
+			},
+			avg_week: {
+				name: "Daily average over this week",
 				text: "7hr 30min",
 			},
-			percent: {
-				name: "Goal (Percentage)",
-				text: "30%",
+			avg_month: {
+				name: "Daily average over this month",
+				text: "7hr 31min",
 			},
-			week: {
-				name: "This Week",
-				text: "30hr 15min",
+			avg_year: {
+				name: "Daily average over this year",
+				text: "7hr 35min",
 			},
 		},
 	},
@@ -21,127 +29,209 @@ export default {
 		name: "Heart Rate",
 		icon: "heart",
 		display_methods: {
-			today: {
-				name: "Today",
-				text: "70",
+			curr_rate: {
+				name: "Current Heart Rate",
+				text: "65 bpm",
 			},
-			/*"percent": {
-                name: "Goal (Percentage)",
-                text: "72%"
-            },*/
+			avg_week: {
+				name: "Resting Heart Rate Average over this week",
+				text: "70 bpm",
+			},
+			avg_month: {
+				name: "Resting Heart Rate Average over this month",
+				text: "85 bpm",
+			},
+			avg_year: {
+				name: "Resting Heart Rate Average over this year",
+				text: "75 bpm",
+			},
 		},
 	},
-	/*"spo2": {
-        name: "SpO2",
-        icon: "heart",
-        display_methods: {
-            "today": {
-                name: "Today",
-                text: "95%"
-            },
-            "percent": {
-                name: "Goal",
-                text: "33%"
-            },
-        },
-    },*/
-	stp: {
-		name: "Steps",
+	steps: {
+		name: "Steps (0-30,000)",
 		icon: "steps",
 		display_methods: {
-			today: {
-				name: "Steps Today",
+			current: {
+				name: "Current",
 				text: "18,381",
 			},
-			percent: {
-				name: "Goal (Percentage)",
-				text: "97%",
+			goal:{
+				name: "Goal Progress(%)",
+				text: "51%"
 			},
-			week: {
-				name: "This week",
+			avg_week: {
+				name: "Daily Average over this week",
+				text: "20,000",
+			},
+			avg_month: {
+				name: "Daily Average over current month",
+				text: "15,333",
+			},
+			monthly_avg_year: {
+				name: "Monthly average for a year",
 				text: "103,333",
 			},
 		},
 	},
-	calories: {
-		name: "Calories",
+	calories_consumed: {
+		name: "Calories Consumed (Cal)",
 		icon: "fire",
 		display_methods: {
-			today: {
-				name: "Today",
-				text: "192",
+			current: {
+				name: "Current",
+				text: "18,381",
 			},
-			percent: {
-				name: "Goal (Percentage)",
+			goal:{
+				name: "Goal Progress(%)",
+				text: "51%"
+			},
+			avg_week: {
+				name: "Daily Average over this week",
+				text: "20,000",
+			},
+			avg_month: {
+				name: "Daily Average over current month",
+				text: "15,333",
+			},
+			monthly_avg_year: {
+				name: "Monthly average for a year",
+				text: "103,333",
+			},
+		},
+	},
+	calories_burned: {
+		name: "Calories Burned (kCal)",
+		icon: "fire",
+		display_methods: {
+			current: {
+				name: "Current",
+				text: "100",
+			},
+			goal:{
+				name: "Goal Progress(%)",
+				text: "21%"
+			},
+			avg_week: {
+				name: "Daily Average over this week",
+				text: "1,500",
+			},
+			avg_month: {
+				name: "Daily Average over current month",
+				text: "2,100",
+			},
+			monthly_avg_year: {
+				name: "Monthly average for a year",
+				text: "1,300",
+			},
+		},
+	},
+	water: {
+		name: "Water Consumed (oz)",
+		icon: "fire",
+		display_methods: {
+			current: {
+				name: "Current",
+				text: "48",
+			},
+			goal_progress: {
+				name: "Goal progress(%)",
 				text: "53%",
 			},
-			week: {
-				name: "This Week",
-				text: "1,291",
+			avg_week: {
+				name: "Average over this week",
+				text: "47",
+			},
+			avg_month: {
+				name: "Average over this month",
+				text: "35",
 			},
 		},
 	},
 	distance: {
-		name: "Distance",
+		name: "Distance Travelled (ki/mi)",
 		icon: "distance",
 		display_methods: {
-			today: {
-				name: "Today",
-				text: "1.23km",
+			current: {
+				name: "Current",
+				text: "10",
 			},
-			percent: {
-				name: "Goal (Percentage)",
-				text: "23%",
+			goal:{
+				name: "Goal Progress(%)",
+				text: "50%"
 			},
-			week: {
-				name: "This Week",
-				text: "12.91km",
+			avg_week: {
+				name: "Daily Average over this week",
+				text: "20",
+			},
+			avg_month: {
+				name: "Daily Average over current month",
+				text: "15",
+			},
+			monthly_avg_year: {
+				name: "Monthly average for a year",
+				text: "21",
 			},
 		},
 	},
 	azm: {
-		name: "Active Zone Minutes",
+		name: "Active Zone Minutes (minutes)",
 		icon: "active_zone_minutes",
 		display_methods: {
-			today: {
-				name: "Today",
-				text: "10min",
+			current: {
+				name: "Current",
+				text: "10",
 			},
-			percent: {
-				name: "Goal (Percentage)",
-				text: "23%",
+			goal:{
+				name: "Goal Progress(%)",
+				text: "50%"
 			},
-			week: {
-				name: "This Week",
-				text: "1hr 30min",
+			avg_week: {
+				name: "Daily Average over this week",
+				text: "60",
+			},
+			avg_month: {
+				name: "Daily Average over current month",
+				text: "75",
+			},
+			monthly_avg_year: {
+				name: "Monthly average for a year",
+				text: "85",
 			},
 		},
 	},
 	weather: {
-		name: "Weather",
+		name: "Weather (C/F)",
 		icon: "weather",
 		display_methods: {
-			today: {
-				name: "Today",
+			current: {
+				name: "Current",
 				text: "12°C",
 			},
 		},
 	},
-	flr: {
-		name: "Floors",
+	floors: {
+		name: "Floors/Elevation Gain (0-20)",
 		icon: "floors",
 		display_methods: {
-			today: {
-				name: "Floors Today",
-				text: "1,121",
+			current: {
+				name: "Current",
+				text: "10",
 			},
-			percent: {
-				name: "Goal (Percentage)",
-				text: "33%",
+			goal:{
+				name: "Goal Progress(%)",
+				text: "20%"
 			},
-			week: {
-				name: "This week",
-				text: "4,888",
+			avg_week: {
+				name: "Daily Average over this week",
+				text: "5",
+			},
+			avg_month: {
+				name: "Daily Average over current month",
+				text: "10",
+			},
+			monthly_avg_year: {
+				name: "Monthly average for a year",
+				text: "15",
 			},
 		},
 	},
