@@ -1,5 +1,6 @@
 ## Tasks
 - [ ] Fully implement popup for each measurement
+- [ ] Add names for layouts & themes
 
 ## Finished Tasks
 

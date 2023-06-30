@@ -73,7 +73,7 @@ export default {
     right: -6rem;
 
     /* Sizing */
-    width: 7rem;
+    width: 8rem;
 
     /* Display */
     display: none;
@@ -83,7 +83,7 @@ export default {
     color: #000;
 
     /* Padding */
-    padding: 0.5rem;
+    padding: 0.2rem;
 
     /* Border / Shadow */
     border-radius: 5px;
