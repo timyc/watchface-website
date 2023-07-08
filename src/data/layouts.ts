@@ -1,3 +1,7 @@
+/*
+	This file contains the positioning of all icons and text of the watch faces
+*/
+
 export default {
 	none: {
 		type: "No",
@@ -39,7 +43,7 @@ export default {
 			{
 				x1: "5%",
 				y1: "63%",
-				x2: "15%",
+				x2: "18%",
 				y2: "70%",
 			},
 			{
