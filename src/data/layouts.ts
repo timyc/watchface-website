@@ -1,4 +1,12 @@
+/*
+	This file contains the positioning of all icons and text of the watch faces
+*/
+
 export default {
+	/* 
+		- Each of the objects contained in this file is a "layout" of sorts
+		- Each object represents a layout that the user can choose, none for example is the layout with no statistics
+	*/
 	none: {
 		type: "No",
 		interface: [
@@ -39,25 +47,25 @@ export default {
 			{
 				x1: "5%",
 				y1: "63%",
-				x2: "15%",
+				x2: "18%",
 				y2: "70%",
 			},
 			{
 				x1: "60%",
 				y1: "63%",
-				x2: "70%",
+				x2: "73%",
 				y2: "70%",
 			},
 			{
 				x1: "5%",
 				y1: "73%",
-				x2: "15%",
+				x2: "18%",
 				y2: "80%",
 			},
 			{
 				x1: "60%",
 				y1: "73%",
-				x2: "70%",
+				x2: "73%",
 				y2: "80%",
 			},
 		],
@@ -83,30 +91,30 @@ export default {
 			{
 				x1: "5%",
 				y1: "13%",
-				x2: "15%",
+				x2: "18%",
 				y2: "20%",
 			},
 			{
 				x1: "60%",
 				y1: "13%",
-				x2: "70%",
+				x2: "73%",
 				y2: "20%",
 			},
 			{
 				x1: "5%",
 				y1: "23%",
-				x2: "15%",
+				x2: "18%",
 				y2: "30%",
 			},
 			{
 				x1: "60%",
 				y1: "23%",
-				x2: "70%",
+				x2: "73%",
 				y2: "30%",
 			},
 		],
 	},
-	corner: {
+	four_corner: {
 		type: "Standard",
 		interface: [
 			{
@@ -127,30 +135,30 @@ export default {
 			{
 				x1: "5%",
 				y1: "13%",
-				x2: "15%",
+				x2: "18%",
 				y2: "20%",
 			},
 			{
 				x1: "82%",
 				y1: "13%",
-				x2: "85%",
+				x2: "82%",
 				y2: "20%",
 			},
 			{
 				x1: "5%",
 				y1: "73%",
-				x2: "15%",
+				x2: "18%",
 				y2: "80%",
 			},
 			{
 				x1: "82%",
 				y1: "73%",
-				x2: "85%",
+				x2: "82%",
 				y2: "80%",
 			},
 		],
 	},
-	left_list: {
+	left_align_list: {
 		type: "Standard",
 		interface: [
 			{
@@ -171,30 +179,30 @@ export default {
 			{
 				x1: "5%",
 				y1: "53%",
-				x2: "15%",
+				x2: "18%",
 				y2: "60%",
 			},
 			{
 				x1: "5%",
 				y1: "63%",
-				x2: "15%",
+				x2: "18%",
 				y2: "70%",
 			},
 			{
 				x1: "5%",
 				y1: "73%",
-				x2: "15%",
+				x2: "18%",
 				y2: "80%",
 			},
 			{
 				x1: "5%",
 				y1: "83%",
-				x2: "15%",
+				x2: "18%",
 				y2: "90%",
 			},
 		],
 	},
-	right_list: {
+	right_align_list: {
 		type: "Standard",
 		interface: [
 			{
@@ -215,25 +223,25 @@ export default {
 			{
 				x1: "82%",
 				y1: "53%",
-				x2: "85%",
+				x2: "81%",
 				y2: "60%",
 			},
 			{
 				x1: "82%",
 				y1: "63%",
-				x2: "85%",
+				x2: "81%",
 				y2: "70%",
 			},
 			{
 				x1: "82%",
 				y1: "73%",
-				x2: "85%",
+				x2: "81%",
 				y2: "80%",
 			},
 			{
 				x1: "82%",
 				y1: "83%",
-				x2: "85%",
+				x2: "81%",
 				y2: "90%",
 			},
 		],
