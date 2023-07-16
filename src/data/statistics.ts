@@ -48,11 +48,11 @@ export default {
 		},
 	},
 	steps: {
-		name: "Steps (0-30,000)",
+		name: "Steps (# walked)",
 		icon: "steps",
 		display_methods: {
 			current: {
-				name: "Current",
+				name: "Steps walked so far today",
 				text: "18,381",
 			},
 			goal:{
@@ -78,7 +78,7 @@ export default {
 		icon: "fire",
 		display_methods: {
 			current: {
-				name: "Current",
+				name: "Calories consumed today",
 				text: "18,381",
 			},
 			goal:{
@@ -104,7 +104,7 @@ export default {
 		icon: "fire",
 		display_methods: {
 			current: {
-				name: "Current",
+				name: "Caloried burned today",
 				text: "100",
 			},
 			goal:{
@@ -130,7 +130,7 @@ export default {
 		icon: "fire",
 		display_methods: {
 			current: {
-				name: "Current",
+				name: "Water consumed today",
 				text: "48",
 			},
 			goal_progress: {
@@ -152,7 +152,7 @@ export default {
 		icon: "distance",
 		display_methods: {
 			current: {
-				name: "Current",
+				name: "Distance travelled today",
 				text: "10",
 			},
 			goal:{
@@ -178,7 +178,7 @@ export default {
 		icon: "active_zone_minutes",
 		display_methods: {
 			current: {
-				name: "Current",
+				name: "Active zone minutes today",
 				text: "10",
 			},
 			goal:{
@@ -200,21 +200,21 @@ export default {
 		},
 	},
 	weather: {
-		name: "Weather (C/F)",
+		name: "Weather (°C/°F)",
 		icon: "weather",
 		display_methods: {
 			current: {
-				name: "Current",
+				name: "Current temperature",
 				text: "12°C",
 			},
 		},
 	},
 	floors: {
-		name: "Floors/Elevation Gain (0-20)",
+		name: "Floors/Elevation Gain (# gained)",
 		icon: "floors",
 		display_methods: {
 			current: {
-				name: "Current",
+				name: "Floors/elevation gained today",
 				text: "10",
 			},
 			goal:{
