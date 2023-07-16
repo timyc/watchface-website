@@ -204,7 +204,7 @@ export default {
 		icon: "weather",
 		display_methods: {
 			current: {
-				name: "Weather today",
+				name: "Current temperature",
 				text: "12°C",
 			},
 		},
