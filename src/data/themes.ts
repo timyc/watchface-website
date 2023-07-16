@@ -24,22 +24,6 @@ export default {
         default: ["darkred", "red", "#FFFFFF"],
         extra: ['AmongUsCustom']
     },
-    "rainbow": {
-        theme: "Rainbow",
-        name: "Rainbow",
-        cc: false,
-        icon: '',
-        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
-        extra: [],
-    },
-    "hearts": {
-        theme: "Hearts",
-        name: "Hearts",
-        cc: false,
-        icon: '',
-        default: ["#FFFFFF", "#FFFFFF", "#000000"],
-        extra: [],
-    },
     "spacenaut": {
         theme: "Spacenaut",
         name: "Astronaut in Space",
@@ -48,28 +32,12 @@ export default {
         default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
         extra: [],
     },
-    "modern2": {
-        theme: "ModernDistorted",
-        name: "Modern 2",
-        cc: true,
-        icon: '',
-        default: ["#2CB574", "black", "#FFFFFF"],
-        extra: [],
-    },
     "beach": {
         theme: "Beach",
         name: "Beach",
         cc: false,
         icon: '',
         default: ["#FFFFFF", "#FFFFFF", "#000000"],
-        extra: [],
-    },
-    "roses": {
-        theme: "Roses",
-        name: "Roses",
-        cc: false,
-        icon: '',
-        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
         extra: [],
     },
     "custom": {
