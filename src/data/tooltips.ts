@@ -7,6 +7,6 @@ export default {
     floors : "Elevation gain, in number of floors climbed",
     sleep : "A sum of your individual scores in sleep duration, sleep quality, and restoration, for a total score of up to 100. Most people get a score between 72 and 83.",
     weather : "",
-    hrm : "",
+    hrm : "Heart rate in bpm (beats per minute)",
     calories_consumed : "Number of calories for the given time period"
 }
