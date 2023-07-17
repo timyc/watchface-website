@@ -1,13 +1,5 @@
 export default {
     // cc = custom color
-    "retro": {
-        theme: "RetroPurple",
-        name: "Retro",
-        cc: true,
-        icon: '',
-        default: ["darkviolet", "black", "#FFFFFF"],
-        extra: []
-    },
     "modern": {
         theme: "ModernSleek",
         name: "Modern",
@@ -16,28 +8,68 @@ export default {
         default: ["#2CB574", "black", "#FFFFFF"],
         extra: []
     },
-    "amogus": {
-        theme: "Amogus",
-        name: "Among Us",
+    "nature": {
+        theme: "Nature",
+        name: "Nature",
         cc: true,
-        icon: 'pencil.webp',
-        default: ["darkred", "red", "#FFFFFF"],
-        extra: ['AmongUsCustom']
+        icon: '',
+        default: ["#2CB574", "black", "#000000"],
+        extra: [],
     },
-    "spacenaut": {
-        theme: "Spacenaut",
-        name: "Astronaut in Space",
+    "holiday": {
+        theme: "Holiday",
+        name: "Holiday",
         cc: false,
         icon: '',
         default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
         extra: [],
     },
-    "beach": {
-        theme: "Beach",
-        name: "Beach",
+    "family_and_love_ones": {
+        theme: "FamilyAndLove",
+        name: "Family And Loved Ones",
         cc: false,
         icon: '',
-        default: ["#FFFFFF", "#FFFFFF", "#000000"],
+        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
+        extra: [],
+    },
+    "fictional": {
+        theme: "Fictional",
+        name: "Fictional",
+        cc: false,
+        icon: '',
+        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
+        extra: [],
+    },
+    "digital_art": {
+        theme: "DigitalArt",
+        name: "Digital Art",
+        cc: false,
+        icon: '',
+        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
+        extra: [],
+    },
+    "health_condition": {
+        theme: "HealthCondition",
+        name: "Health Condition",
+        cc: false,
+        icon: '',
+        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
+        extra: [],
+    },
+    "black": {
+        theme: "Black",
+        name: "Black",
+        cc: true,
+        icon: '',
+        default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
+        extra: [],
+    },
+    "bitmoji": {
+        theme: "Bitmoji",
+        name: "Bitmoji",
+        cc: true,
+        icon: '',
+        default: ["#FFFFFF", "#FFFFFF", "#ffffff"],
         extra: [],
     },
     "custom": {
