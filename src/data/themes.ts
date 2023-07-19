@@ -1,17 +1,17 @@
 export default {
     // cc = custom color
-    "modern": {
-        theme: "ModernSleek",
-        name: "Modern",
+    "multimodern": {
+        theme: "MultiModern",
+        name: "Multi Colored Modern",
         cc: true,
         icon: '',
-        default: ["#2CB574", "black", "#FFFFFF"],
+        default: ["darkviolet", "black", "#FFFFFF"],
         extra: []
     },
     "nature": {
         theme: "Nature",
         name: "Nature",
-        cc: true,
+        cc: false,
         icon: '',
         default: ["#2CB574", "black", "#000000"],
         extra: [],
@@ -35,7 +35,7 @@ export default {
     "fictional": {
         theme: "Fictional",
         name: "Fictional",
-        cc: false,
+        cc: true,
         icon: '',
         default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
         extra: [],
@@ -59,7 +59,7 @@ export default {
     "black": {
         theme: "Black",
         name: "Black",
-        cc: true,
+        cc: false,
         icon: '',
         default: ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
         extra: [],
@@ -67,7 +67,7 @@ export default {
     "bitmoji": {
         theme: "Bitmoji",
         name: "Bitmoji",
-        cc: true,
+        cc: false,
         icon: '',
         default: ["#FFFFFF", "#FFFFFF", "#ffffff"],
         extra: [],

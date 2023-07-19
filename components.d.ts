@@ -33,6 +33,7 @@ declare module '@vue/runtime-core' {
     LayoutStep: typeof import('./src/components/steps/LayoutStep.vue')['default']
     ModernDistorted: typeof import('./src/components/themes/ModernDistorted.vue')['default']
     ModernSleek: typeof import('./src/components/themes/ModernSleek.vue')['default']
+    MultiModern: typeof import('./src/components/themes/MultiModern.vue')['default']
     Nature: typeof import('./src/components/themes/Nature.vue')['default']
     NoLayout: typeof import('./src/components/layouts/NoLayout.vue')['default']
     NoTheme: typeof import('./src/components/themes/NoTheme.vue')['default']
