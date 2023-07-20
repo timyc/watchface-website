@@ -24,6 +24,7 @@ const modalOpen = ref(false);
         <div id="themesContainer">
             <div :class="{ 'selected': settingsStore.theme == key }" v-for="theme, key in themes"
                 @click="settingsStore.theme = key; updateSelected($event.currentTarget as Element)" v-once>
+                <div>{{theme.name}}</div>
                 <svg width="250" height="250" viewBox="100 50 50 180">
                     <component :is="importer('themes', theme.theme)" />
                     <template v-if="theme.icon != ''">

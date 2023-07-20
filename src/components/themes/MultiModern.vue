@@ -4,8 +4,8 @@ const settingsStore = useSettingsStore();
 </script>
 
 <template>
-    <svg width="250" height="250" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100%" height="100%" rx="21" :fill="settingsStore.primaryColor == null ? 'black' : settingsStore.primaryColor" />
+    <svg width="250" height="250" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" rx="1" :fill="settingsStore.primaryColor == null ? 'black' : settingsStore.primaryColor" />
         <path
             d="M29 128.459L41.6422 121.302L53.4485 113.628C56.9665 111.342 59.9658 108.342 62.2525 104.824L67.1409 97.3034L72.7123 88.0521C75.944 82.6859 80.9702 78.636 86.901 76.6194V76.6194C92.2405 74.804 96.8627 71.3344 100.097 66.7141L105.619 58.8252L115.311 47.8694C116.514 46.5094 117.591 45.043 118.529 43.4883L125.459 31.9997"
             stroke="url(#paint0_radial_0_1)" />
@@ -233,4 +233,5 @@ const settingsStore = useSettingsStore();
         </radialGradient>
     </defs>
     <slot></slot>
-</svg></template>
+    </svg>
+</template>
