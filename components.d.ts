@@ -39,7 +39,7 @@ declare module '@vue/runtime-core' {
     NoTheme: typeof import('./src/components/themes/NoTheme.vue')['default']
     Rainbow: typeof import('./src/components/themes/Rainbow.vue')['default']
     RainbowCloud: typeof import('./src/components/themes/RainbowCloud.vue')['default']
-    RetroPurple: typeof import('./src/components/themes/RetroPurple.vue')['default']
+    RetroPurple: typeof import('./src/components/themes/old_themes/RetroPurple.vue')['default']
     Roses: typeof import('./src/components/themes/Roses.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

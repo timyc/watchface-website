@@ -42,7 +42,6 @@ const modalOpen = ref(false);
                     <component v-for="extra in themes[settingsStore.theme as keyof typeof themes].extra"
                         :is="importer('extras', extra)" @complete="settingsStore.extraStep++" />
                 </div>
-
             </div>
         </template>
     </div>
