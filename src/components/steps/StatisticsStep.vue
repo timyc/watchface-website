@@ -83,11 +83,13 @@ export default {
     color: #000;
 
     /* Padding */
-    padding: 0.2rem;
+    padding: 0.3rem;
 
     /* Border / Shadow */
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    text-align: left;
 }
 
 .statistic-item:hover .tooltip {
