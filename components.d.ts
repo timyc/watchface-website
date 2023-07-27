@@ -31,6 +31,7 @@ declare module '@vue/runtime-core' {
     ImageUpload: typeof import('./src/components/extras/ImageUpload.vue')['default']
     IntroStep: typeof import('./src/components/steps/IntroStep.vue')['default']
     LayoutStep: typeof import('./src/components/steps/LayoutStep.vue')['default']
+    MinimalisticModern: typeof import('./src/components/themes/MinimalisticModern.vue')['default']
     ModernDistorted: typeof import('./src/components/themes/ModernDistorted.vue')['default']
     ModernSleek: typeof import('./src/components/themes/ModernSleek.vue')['default']
     MultiModern: typeof import('./src/components/themes/MultiModern.vue')['default']
