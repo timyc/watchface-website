@@ -83,7 +83,7 @@ export default {
 	},
 	blood_oxygen_saturation: {
 		name: "Blood Oxygen Saturation (x%)",
-		icon: "floors",
+		icon: "blood_oxygen",
 		display_methods: {
 			current: {
 				name: "Current Blood Oxygen Saturation",
@@ -93,7 +93,7 @@ export default {
 	},
 	blood_glucose_level: {
 		name: "Blood Glucose Level (mg/dL)",
-		icon: "floors",
+		icon: "blood_glucose",
 		display_methods: {
 			current: {
 				name: "Current Blood Glucose Level",
