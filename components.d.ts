@@ -8,7 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AestheticStep: typeof import('./src/components/steps/AestheticStep.vue')['default']
-    Amogus: typeof import('./src/components/themes/Amogus.vue')['default']
+    Amogus: typeof import('./src/components/themes/old_themes/Amogus.vue')['default']
     AmongUsCustom: typeof import('./src/components/extras/AmongUsCustom.vue')['default']
     BackButton: typeof import('./src/components/buttons/BackButton.vue')['default']
     BarredTopIconLayout: typeof import('./src/components/layouts/BarredTopIconLayout.vue')['default']
@@ -52,6 +52,7 @@ declare module '@vue/runtime-core' {
     StatisticItem: typeof import('./src/components/items/StatisticItem.vue')['default']
     StatisticItemCentered: typeof import('./src/components/items/StatisticItemCentered.vue')['default']
     StatisticsStep: typeof import('./src/components/steps/StatisticsStep.vue')['default']
+    TestLayout: typeof import('./src/components/layouts/TestLayout.vue')['default']
     ThemesStep: typeof import('./src/components/steps/ThemesStep.vue')['default']
     TopIconLayout: typeof import('./src/components/layouts/TopIconLayout.vue')['default']
     TopThreeIconLayout: typeof import('./src/components/layouts/TopThreeIconLayout.vue')['default']
