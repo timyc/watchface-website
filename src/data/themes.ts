@@ -16,14 +16,14 @@ export default {
         default: ["#2CB574", "black", "#000000"],
         extra: [],
     },
-    // "minimalmodern": {
-    //     theme: "MinimalisticModern",
-    //     name: "Minimalistic Modern",
-    //     cc: false,
-    //     icon: '',
-    //     default: ["#2CB574", "black", "#000000"],
-    //     extra: [],
-    // },
+    "minimalmodern": {
+        theme: "MinimalisticModern",
+        name: "Minimalistic Modern",
+        cc: false,
+        icon: '',
+        default: ["#2CB574", "black", "#FFFFFF"],
+        extra: [],
+    },
     "holiday": {
         theme: "Holiday",
         name: "Holiday",
