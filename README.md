@@ -4,6 +4,8 @@
 
 2. The data step of the navbar will show as incomplete when the user selects a no data layout
 
+3. The 5 icon / data layout is bugged, for some reason the website only displays the first four datas that are picked but not the 5th one
+
 ## Notes
 
 -   .env.production should be copied to .env.local when developing.
