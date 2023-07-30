@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     BarredTopIconLayout: typeof import('./src/components/layouts/BarredTopIconLayout.vue')['default']
     Beach: typeof import('./src/components/themes/Beach.vue')['default']
     BigTimeLayout: typeof import('./src/components/layouts/BigTimeLayout.vue')['default']
+    BigTimeTwoIconLayout: typeof import('./src/components/layouts/BigTimeTwoIconLayout.vue')['default']
     Bitmoji: typeof import('./src/components/themes/Bitmoji.vue')['default']
     Black: typeof import('./src/components/themes/Black.vue')['default']
     BottomThreeBarredLayout: typeof import('./src/components/layouts/BottomThreeBarredLayout.vue')['default']
@@ -31,6 +32,7 @@ declare module '@vue/runtime-core' {
     ImageUpload: typeof import('./src/components/extras/ImageUpload.vue')['default']
     IntroStep: typeof import('./src/components/steps/IntroStep.vue')['default']
     LayoutStep: typeof import('./src/components/steps/LayoutStep.vue')['default']
+    LeftCornerTwoIconLayout: typeof import('./src/components/layouts/LeftCornerTwoIconLayout.vue')['default']
     MinimalisticModern: typeof import('./src/components/themes/MinimalisticModern.vue')['default']
     ModernDistorted: typeof import('./src/components/themes/ModernDistorted.vue')['default']
     ModernSleek: typeof import('./src/components/themes/ModernSleek.vue')['default']
@@ -56,5 +58,6 @@ declare module '@vue/runtime-core' {
     ThemesStep: typeof import('./src/components/steps/ThemesStep.vue')['default']
     TopIconLayout: typeof import('./src/components/layouts/TopIconLayout.vue')['default']
     TopThreeIconLayout: typeof import('./src/components/layouts/TopThreeIconLayout.vue')['default']
+    TwoIconLayout: typeof import('./src/components/layouts/TwoIconLayout.vue')['default']
   }
 }
