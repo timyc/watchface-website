@@ -19,7 +19,7 @@ export default {
     "minimalmodern": {
         theme: "MinimalisticModern",
         name: "Minimalistic Modern",
-        cc: false,
+        cc: true,
         icon: '',
         default: ["#2CB574", "black", "#FFFFFF"],
         extra: [],
