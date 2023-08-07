@@ -7,7 +7,7 @@ export default {
 		- Each of the objects contained in this file is a "layout" of sorts
 		- Each object represents a layout that the user can choose, none for example is the layout with no statistics
 	*/
-	three_bottom_top_icon: {
+	'three_bottom_top_icon': {
 		type: "TopIcon",
 		interface: [
 			{

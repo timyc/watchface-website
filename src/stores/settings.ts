@@ -24,6 +24,8 @@ export const useSettingsStore = defineStore("settingsStore", {
         step: 3,
         extraStep: 0,
         aestheticFlag: false,
+        // We will have an array here that contains colors, this allows us to dynamically store individual colors of icons for the multicolored modern theme
+        uniqueIconColor: [] as string[],
     }),
     actions: {
         getExport() {
