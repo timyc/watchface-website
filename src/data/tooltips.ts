@@ -7,7 +7,7 @@ export default {
     water: "Amount of water consumed for the given period",
     floors : "Elevation gain, in number of floors climbed",
     weather : "Metric representing the current weather in your location",
-    elevation_gain : "",
-    blood_oxygen_saturation : "",
-    blood_glucose_level : ""
+    elevation_gain : "Elevation gain, in number of floors climbed.",
+    blood_oxygen_saturation : "Recording the percentage, average, as well as the minimum and maximum levels of oxygen circulating in your blood.",
+    blood_glucose_level : "Level of glucose/sugar in your blood."
 }

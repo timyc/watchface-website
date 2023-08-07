@@ -1,14 +1,4 @@
 export default {
-	hrm: {
-		name: "Heart Rate",
-		icon: "heart",
-		display_methods: {
-			curr_rate: {
-				name: "Current Heart Rate",
-				text: "65 bpm",
-			},
-		},
-	},
 	steps: {
 		name: "Steps (# walked)",
 		icon: "steps",
@@ -20,6 +10,16 @@ export default {
 			steps_walked_in_hour:{
 				name: "Steps in the hour",
 				text: "51"
+			},
+		},
+	},
+	hrm: {
+		name: "Heart Rate",
+		icon: "heart",
+		display_methods: {
+			curr_rate: {
+				name: "Current Heart Rate",
+				text: "65 bpm",
 			},
 		},
 	},
@@ -57,6 +57,16 @@ export default {
 			},
 		},
 	},
+	elevation_gain: {
+		name: "Stairs/Elevation Gain (# of stairs)",
+		icon: "floors",
+		display_methods: {
+			current: {
+				name: "Floors/Elevation gained today",
+				text: "10",
+			},
+		},
+	},
 	weather: {
 		name: "Weather (°C/°F)",
 		icon: "weather",
@@ -68,16 +78,6 @@ export default {
 			conditions: {
 				name: "Weather Conditions",
 				text: "Cloudy",
-			},
-		},
-	},
-	elevation_gain: {
-		name: "Stairs/Elevation Gain (# of stairs)",
-		icon: "floors",
-		display_methods: {
-			current: {
-				name: "Floors/Elevation gained today",
-				text: "10",
 			},
 		},
 	},
