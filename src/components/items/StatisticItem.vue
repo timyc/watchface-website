@@ -58,7 +58,7 @@ export default {
             :style="{ 'filter': hexToCSSFilter(iconColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : iconColor).filter.slice(0, -1) }" />
     </svg>
     <text :x="coords.x2" :y="coords.y2" dominant-baseline="middle" :text-anchor="parseInt(coords.x1) > 80 ? 'end' : 'start'"
-        :fill="settingsStore.iconTextColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : settingsStore.iconTextColor"
+        :fill="textColor == null ? (settingsStore.theme == null ? '#FFFFFF' : themes[settingsStore.theme as keyof typeof themes].default[2]) : textColor"
         :font-size="size">
         {{ //@ts-ignore
             stat == null ? 'Stat' : statistics[stat.stat as keyof typeof statistics].display_methods[stat.mode].text }}
