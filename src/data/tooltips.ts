@@ -1,5 +1,5 @@
 export default {
-    hrm : "",
+    hrm : "Heart rate in bpm (beats per minute)",
     steps : "Number of steps taken",
     distance : "Distance traveled in miles/km",
     azm : "Active Zone Minutes is a physical activity metric that counts minutes spent in the each heart rate zone, counting all activities that get the user's heart pumping",
